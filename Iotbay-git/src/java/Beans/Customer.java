@@ -4,20 +4,36 @@
  */
 package Beans;
 
+import java.util.ArrayList;
+import java.io.Serializable;
+
 /**
  *
  * @author atran
  */
-public class Customer {
+public class Customer implements Serializable{
     private String name;
     private String email;
     private String password;
+    private ArrayList<Order> order;
+    private Products products;
+    
 
     public Customer(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
+        order = new ArrayList<Order>();
+        products = new Products();
     }
+    
+    public void createOrdrer(String userID, boolean status, String date, String productName){
+      
+    }
+    
+   //ublic Product findProduct(String name){
+       //turn products.findProduct();
+   //
 
     public String getName() {
         return name;
