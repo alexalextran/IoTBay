@@ -12,9 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
               <%
-              Customer customer = (Customer)session.getAttribute("customer");
-              String name = customer.returnName();
-             %> 
+              Customer customer = (Customer)session.getAttribute("customer"); %> 
     </head>
     <body>
         <header>Hey ${customer.name} welcome to IOT BAY!</header>

@@ -19,7 +19,7 @@ public class Customer {
         this.password = password;
     }
 
-    public String returnName() {
+    public String getName() {
         return name;
     }
 
