@@ -30,6 +30,10 @@ public class Customer implements Serializable{
     public void createOrdrer(String userID, boolean status, String date, String productName){
       
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     
    //ublic Product findProduct(String name){
        //turn products.findProduct();

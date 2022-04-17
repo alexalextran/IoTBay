@@ -15,7 +15,7 @@
     <body>
         <% 
             if(request.getParameter("email") != null || request.getParameter("password") != null || request.getParameter("name") != null){
-            Customer customer = new Customer( request.getParameter("name"), request.getParameter("email") , request.getParameter("password"));
+            customer.setName(request.getParameter("name"));
             session.setAttribute("customer", customer);
             }
             
