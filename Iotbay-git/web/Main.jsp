@@ -4,7 +4,7 @@
     Author     : Alex Tran
 --%>
 
-<%@page import="beans.Customer"%>
+<%@page import="Beans.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
               <%
-              Customer customer = (Customer)session.getAttribute("customer"); %> 
+              Customer customer = (Customer)session.getAttribute("customer");
+              String name = customer.returnName();
+             %> 
     </head>
     <body>
         <header>Hey ${customer.name} welcome to IOT BAY!</header>
