@@ -4,7 +4,7 @@
     Author     : Alex Tran
 --%>
 
-<%@page import="beans.Customer"%>
+<%@page import="Beans.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,8 +20,7 @@
             }
             
          Customer customer = (Customer)session.getAttribute("customer"); 
-        String email = customer.getEmail(); 
-        String password = customer.getPassword(); %>
+        %>
         <form method="POST" action=""Update.jsp>
             <input type="text" name="name" value="${customer.name}" />
             <input type="text" name="email" value="${customer.email}" />

@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-           <%@page import="beans.Customer"%> 
+           <%@page import="Beans.Customer"%> 
          <%
  
             String name = request.getParameter("Name");
