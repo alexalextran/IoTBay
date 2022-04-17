@@ -34,6 +34,14 @@ public class Customer implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
    //ublic Product findProduct(String name){
        //turn products.findProduct();
