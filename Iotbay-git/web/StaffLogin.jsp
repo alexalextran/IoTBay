@@ -11,7 +11,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+    <div class="container">
+        <div class="row">
+            <h1>Staff Management System</h1>
+            <a href="addStaff.jsp" class="btn btn-primary">Add Staff Member</a>
+            <a href="viewStaff.jsp" class="btn btn-primary">View Staff Members</a>
+        </div>
+     </div>
 </html>

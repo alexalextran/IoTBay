@@ -4,7 +4,7 @@
     Author     : Alex Tran
 --%>
 
-<%@page import="Beans.Customer"%>
+<%@page import="uts.isd.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

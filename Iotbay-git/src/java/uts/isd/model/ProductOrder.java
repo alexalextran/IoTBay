@@ -2,12 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Beans;
+package uts.isd.model;
 
 /**
  *
  * @author Alex Tran
  */
-public class Staff {
+public class ProductOrder {
+    private int orderID;
+    private int productId;
+    private int quantity;
+    private double price;
+    private Product product;
     
 }
