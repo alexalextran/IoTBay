@@ -1,5 +1,6 @@
 
 package uts.isd.controller;
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,9 +26,14 @@ public class FetchStaff{
         return connDB;
     }
    
-    public static  List <Staff> getStaff(Connection conn) throws SQLException {
+    public static  List <Staff> getStaff(Connection conn, String params) throws SQLException {
+    String sqlQuery;
+    if(params!=null){
+        sqlQuery = "SELECT * FROM ALIZA.\"Staff\" WHERE position like '%" +params+"%' or fname like '%" +params+"%' or lname like '%" +params+"%'"; 
+    }else{
+        sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
+    }
     //String sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
-    String sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
     try (Statement statement = conn.createStatement()) {
       ResultSet res = statement.executeQuery(sqlQuery);
       List <Staff> StaffList = new ArrayList <Staff>();

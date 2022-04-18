@@ -33,23 +33,30 @@
         <div class="col">
             <div class="input-group">
                 <div class="form-outline">
-                  <input type="search" id="form1" class="form-control" placeholder="Search by name" />
+                    <form action="" method="get">
+                        <input type="search" id="search" class="form-control" placeholder="Search by Name/Position" name="search"/>
+                    </form>
+                 
                 </div>
-                <button type="button" class="btn btn-primary">Search</button>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group">
-                <div class="form-outline">
-                  <input type="search" id="form1" class="form-control" placeholder="Search by Position"/>
-                </div>
-                <button type="button" class="btn btn-primary">Search</button>
             </div>
         </div>
 
     </div>
 </div>
-               <hr>
+              
+                <% 
+            String params = request.getParameter("search");
+            FetchStaff fs = new FetchStaff();
+            List <Staff> staffList = fs.getStaff(fs.getConnDB(), params);
+            if(staffList.size() == 0){
+                %>
+             
+                <p >No Staff exists. Please add Staff</p>
+              
+              
+              <%
+            }else{
+%>
         <table class="table">
             <thead>
               <tr>
@@ -67,9 +74,7 @@
               </tr>
             </thead>
              <tbody>
-            <% 
-            FetchStaff fs = new FetchStaff();
-            List <Staff> staffList = fs.getStaff(fs.getConnDB());
+           <%
            for(int i = 0; i < staffList.size(); i++ ){
             int id = staffList.get(i).getid();
             String selectedfname = staffList.get(i).getFirstName();
@@ -81,6 +86,7 @@
             String selectedposition =  staffList.get(i).getPosition();
             String selectedmobile =  staffList.get(i).getMobileNumber();
             Boolean selectedstaffStatus =  staffList.get(i).getStaffStatus();
+
                 
                 
             %>
@@ -101,6 +107,7 @@
               </tr>
            
          <%
+             }
              }
         %> 
              </tbody>
