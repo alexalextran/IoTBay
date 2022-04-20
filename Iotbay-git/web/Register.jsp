@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Register</title>
         <link rel="stylesheet" href="css/css.css">
     </head>
     <body>
@@ -17,13 +17,13 @@
             
         
           <h1>Register</h1>
-          <form action="Welcome.jsp" method="POST">
+          <form class="enterform__input" action="Welcome.jsp" method="POST">
             <input type="text" name="Name" value="" placeholder="Name" />
             <input type="text" name="email" value="" placeholder="Email"/>
             <input type="text" name="password" value="" placeholder="Password"/>
-            <button class='button'>Login </button>
+            <button class='button'>Register </button>
         </form>
-          
+           <a href="Register.jsp">Already have an account? click here!</a>
         </div>
     </body>
 </html>

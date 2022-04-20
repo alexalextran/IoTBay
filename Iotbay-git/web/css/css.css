@@ -16,6 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 html{
     font-size: 1vw;
     --blue: rgb(0,103,242);
+    font-family: Arial, sans-serif;
 }
 
 .blue{
@@ -35,7 +36,7 @@ html{
 }
 
 .button{
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     background-color: var(--blue);
     color: white;
     border-radius: 1rem;
@@ -48,4 +49,34 @@ html{
     display: flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
+   width: 50rem;
+   height: 30rem;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   
+   
+}
+
+.enterform__input{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--blue);
+    background-color: inherit;
+    margin: 1rem 0rem;
+    transition: all 300ms; 
+}
+
+input:focus{
+    border-bottom-color: black;
+    
 }
