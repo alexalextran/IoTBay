@@ -10,9 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/css.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+      
            <%@page import="uts.isd.model.Customer"%> 
          <%
  
@@ -26,13 +27,34 @@
         
         %> 
         
-        <a href="index.jsp">Index page</a>
         
-        <h1>Welcome <%out.println(name);%> </h1>
-        <h1>Your details are</h1>
-         <h1>email : <%out.println(email);%> </h1>
-            <h1>password : <%out.println(password);%></h1>
+        <div class="welcome__gretting">
             
-            <a href="Main.jsp"> Proceed to the main page!</a>
+            <h1>Welcome <span class="blue"><%out.println(name);%></span> you successfully logged in</h1>
+        <h1>Your details are</h1>
+        </div>
+        
+        <div class='welcome__details box-shadow'>
+            <table class="welcome__table">
+     <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+  </tr>
+  <td>
+      <%out.println(name);%>
+  </td>
+  <td>
+      <%out.println(email);%>
+  </td>
+  <td>
+      <%out.println(password);%>
+  </td>
+        </table>
+  <a href="Main.jsp"> Proceed to the main page!</a>
+         </div>
+       
+            
+            
     </body>
 </html>
