@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DataBaseConnector extends Database{
     public DataBaseConnector() throws ClassNotFoundException, SQLException {
-        Class.forName(driver); 
+       Class.forName(driver); 
         super.connDB = DriverManager.getConnection(endPoint, username, password);
     }
 

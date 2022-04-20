@@ -10,6 +10,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 *{
   box-sizing: border-box;
   padding: 0;
-  margin: 0; 
-  background-color: gray;
+  margin: 0;
 }
+
+html{
+    font-size: 1vw;
+    --blue: rgb(0,103,242);
+}
+
+.blue{
+    color: var(--blue);
+}
+
+.button__link{
+    padding: 2rem;
+    background: var(--blue);
+    
+}
+
+.indexpage__nav{
+    padding: 5rem;
+    background-color: gray;
+    border-radius: 2rem;
+}
+
