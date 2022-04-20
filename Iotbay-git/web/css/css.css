@@ -36,10 +36,10 @@ html{
 }
 
 .button{
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     background-color: var(--blue);
     color: white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .enterform{
