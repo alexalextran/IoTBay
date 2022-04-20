@@ -13,11 +13,17 @@
         <link rel="stylesheet" href="css/css.css">
     </head>
     <body>
-          <h1>Register</h1><form action="Welcome.jsp" method="POST">
+        <div class='enterform'>
+            
+        
+          <h1>Register</h1>
+          <form action="Welcome.jsp" method="POST">
             <input type="text" name="Name" value="" placeholder="Name" />
             <input type="text" name="email" value="" placeholder="Email"/>
             <input type="text" name="password" value="" placeholder="Password"/>
-            <button>Login </button>
+            <button class='button'>Login </button>
         </form>
+          
+        </div>
     </body>
 </html>
