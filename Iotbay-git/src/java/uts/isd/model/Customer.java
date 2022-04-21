@@ -15,14 +15,16 @@ public class Customer implements Serializable{
     private String name;
     private String email;
     private String password;
+    private String phone;
     private ArrayList<Order> order;
     private Products products;
     
 
-    public Customer(String name, String email, String password) {
+    public Customer(String name, String email, String password, String phone) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.phone = phone;
         order = new ArrayList<Order>();
         products = new Products();
     }

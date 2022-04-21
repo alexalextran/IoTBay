@@ -23,12 +23,14 @@
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
-            Customer customer = new Customer(name, email , password);
+            Customer customer = new Customer(name, email , password, phone);
             
             session.setAttribute("customer", customer);
             
              InsertUser is = new InsertUser();
              String result = is.Insert(is.getConnDB(), name, email, password, phone);
+             
+             
         %> 
         
         

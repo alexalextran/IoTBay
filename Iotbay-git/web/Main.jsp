@@ -23,7 +23,7 @@
             <div class="main__account">
               <h2>Account & Details</h2>
             <a href="Update.jsp">Update Details</a>
-             <a href="Update.jsp">Delete account</a>
+             <a href="DeleteUser.jsp">Delete account</a>
             <a href="Logout.jsp">Log out</a>
            
         </div>
