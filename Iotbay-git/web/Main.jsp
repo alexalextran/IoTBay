@@ -11,14 +11,31 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/css.css">
               <%
-              Customer customer = (Customer)session.getAttribute("customer"); %> 
+              Customer customer = (Customer)session.getAttribute("customer"); 
+              %> 
     </head>
     <body>
         <header>Hey ${customer.name} welcome to IOT BAY!</header>
-        <div>
+        <div class='main__div'>
+            
+            <div class="main__account">
+              <h2>Account & Details</h2>
             <a href="Update.jsp">Update Details</a>
-            <a href="Products.jsp">View Products</a>
+             <a href="Update.jsp">Delete account</a>
+            <a href="Logout.jsp">Log out</a>
+           
         </div>
+            
+            <div class='main__products'>
+                <h2>Orders & Products</h2>
+                <a href="Products.jsp">View Products </a>
+                <a href="Products.jsp">My Orders</a>
+                
+            </div>
+            
+        </div>
+        
     </body>
 </html>

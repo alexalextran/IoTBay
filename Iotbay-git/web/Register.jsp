@@ -23,7 +23,7 @@
             <input type="text" name="password" value="" placeholder="Password"/>
             <button class='button'>Register </button>
         </form>
-           <a href="Register.jsp">Already have an account? click here!</a>
+           <a href="Login.jsp">Already have an account? click here!</a>
         </div>
     </body>
 </html>
