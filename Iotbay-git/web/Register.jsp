@@ -21,6 +21,7 @@
             <input type="text" name="Name" value="" placeholder="Name" />
             <input type="text" name="email" value="" placeholder="Email"/>
             <input type="text" name="password" value="" placeholder="Password"/>
+             <input type="text" name="phone" value="" placeholder="Phone"/>
             <button class='button'>Register </button>
         </form>
            <a href="Login.jsp">Already have an account? click here!</a>

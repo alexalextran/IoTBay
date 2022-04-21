@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.model.Customer"%>
+<%@page import="uts.isd.controller.InsertUser"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,17 +16,19 @@
     </head>
     <body>
       
-           <%@page import="uts.isd.model.Customer"%> 
+           
          <%
  
             String name = request.getParameter("Name");
-            String email=request.getParameter("email");
+            String email = request.getParameter("email");
             String password = request.getParameter("password");
+            String phone = request.getParameter("phone");
             Customer customer = new Customer(name, email , password);
             
             session.setAttribute("customer", customer);
             
-        
+             InsertUser is = new InsertUser();
+             String result = is.Insert(is.getConnDB(), name, email, password, phone);
         %> 
         
         
@@ -51,6 +55,7 @@
       <%out.println(password);%>
   </td>
         </table>
+     <%= result %>
   <a href="Main.jsp"> Proceed to the main page!</a>
          </div>
        
