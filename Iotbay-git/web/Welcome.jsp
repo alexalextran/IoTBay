@@ -9,6 +9,8 @@
 <%@page import="uts.isd.controller.InsertCustomer"%>
 <%@page import="uts.isd.controller.ReadCustomer"%>
 <%@page import="uts.isd.controller.FindCustomer"%>
+<%@page import="uts.isd.model.Staff"%>
+<%@page import="uts.isd.controller.InsertStaff"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +22,63 @@
       
            
          <%
-             if(request.getParameter("Name") != null){
+             if(request.getParameter("position") != null){
+             String fname = request.getParameter("fname");
+              String lname = request.getParameter("lname");
+              String address = request.getParameter("address");
+              String email = request.getParameter("email");
+              String username = request.getParameter("username");
+             String password = request.getParameter("password");
+             String position = request.getParameter("position");
+             String mobile = request.getParameter("mobile");
+             Boolean staffStatus = true;
+             InsertStaff is = new InsertStaff();
+             String result = is.Insert(is.getConnDB(), fname,lname, email, position, address, username, password, staffStatus, mobile);
+             
+             %>
+             
+             
+              <div class="welcome__gretting">
+            
+            <h1>Welcome <span class="blue"><%out.println(fname);%></span> you successfully registered</h1>
+        <h1>Your details are</h1>
+        </div>
+        
+        <div class='welcome__details box-shadow'>
+           <table class="welcome__table">
+     <tr>
+     <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+     <th>Phone</th>
+  </tr>
+  <td>
+      <%out.println(1);%>
+  </td>
+  <td>
+      <%out.println(fname);%>
+  </td>
+  <td>
+      <%out.println(email);%>
+  </td>
+  <td>
+      <%out.println(password);%>
+  </td>
+  <td>
+      <%out.println(mobile);%>
+  </td>
+        </table>
+     
+  <a href="Main.jsp" class="button__link"> Proceed to the main page!</a>
+         </div>
+             <%
+             }
+             else{
+             
+             
+             
+            if(request.getParameter("Name") != null){
                     String name = request.getParameter("Name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -134,6 +192,7 @@
              <%
              }
              }
+}
         %> 
         
       
