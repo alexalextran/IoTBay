@@ -22,7 +22,7 @@
       
            
          <%
-             if(request.getParameter("position") != null){
+             if(request.getParameter("staffStatus") != null){
              String fname = request.getParameter("fname");
               String lname = request.getParameter("lname");
               String address = request.getParameter("address");
@@ -74,6 +74,30 @@
          </div>
              <%
              }
+            else if(request.getParameter("staffStatus") == null && request.getParameter("Name") == null && request.getParameter("position") != null) {
+            ReadCustomer readCustomer = new ReadCustomer();
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            
+     
+             if(readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")) != null){
+             Staff staff = readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
+             session.setAttribute("user", readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")));
+             %>
+              
+                Your staff details are correct!
+                <%
+                }
+            else{
+                %>
+                  <div class='welcome__details box-shadow'>
+            <h1>The details entered were <span class="blue">incorrect</span> please try again!</h1>
+     
+             <a href="StaffLogin.jsp" class="button__link"> Try again?</a>
+                 </div>
+                <%
+                } 
+                }
              else{
              
              

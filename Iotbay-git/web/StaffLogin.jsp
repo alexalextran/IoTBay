@@ -18,6 +18,7 @@
           <h1>Login</h1>
           <form class="enterform__input" action="Welcome.jsp" method="POST">
             <input type="text" name="email" value="" placeholder="Email"/>
+            <input type="text" name="position" value="" placeholder="Position"/>
             <input type="text" name="password" value="" placeholder="Password"/>
             <button class='button'>Login </button>
         </form>
@@ -30,6 +31,7 @@
             <h1>Staff Management System</h1>
             <a href="addStaff.jsp" class="btn btn-primary">Add Staff Member</a>
             <a href="viewStaff.jsp" class="btn btn-primary">View Staff Members</a>
+            
         </div>
      </div>
     </body>
