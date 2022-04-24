@@ -13,6 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/css.css">
     </head>
     <body>
         <% 
@@ -28,28 +29,43 @@
             customer.setPassword(request.getParameter("password"));
             customer.setPhone(request.getParameter("phone"));
             %>
-            <h2>Your details have been successfully changed</h2>
-          <form method="POST" action=""Update.jsp>
+            <div class="welcome__gretting">
+                <h1>Your details have been successfully changed</h1> 
+            </div>
+           
+            <div class="enterform box-shadow">
+                <form class="enterform__input" method="POST" action="UpdateCustomer.jsp">
+              <h3>Name</h3>
             <input type="text" name="name" value="${customer.name}" />
+              <h3>Email</h3>
             <input type="text" name="email" value="${customer.email}" />
+              <h3>Password</h3>
             <input type="text" name="password" value="${customer.password}"/>
+              <h3>Phone</h3>
             <input type="text" name="phone" value="${customer.phone}"/>
-            <button>Submit</button>
+            <button class="button__link">Submit</button>
         </form>
             
             <a href="Main.jsp">Back to welcome page</a>
+            </div>
            <% 
                } else{ 
            %>
-              <form method="POST" action=""Update.jsp>
+           <div class="enterform box-shadow">
+                <form class="enterform__input" method="POST" action="UpdateCustomer.jsp">
+              <h3>Name</h3>
             <input type="text" name="name" value="${customer.name}" />
+              <h3>Email</h3>
             <input type="text" name="email" value="${customer.email}" />
+              <h3>Password</h3>
             <input type="text" name="password" value="${customer.password}"/>
+              <h3>Phone</h3>
             <input type="text" name="phone" value="${customer.phone}"/>
-            <button>Submit</button>
+            <button class="button__link">Submit</button>
         </form>
             
             <a href="Main.jsp">Back to welcome page</a>
+            </div>
             <% 
             }
         %>

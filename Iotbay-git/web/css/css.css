@@ -107,11 +107,12 @@ LOGIN  AND REGISTER PAGE
    justify-content: center;
    flex-direction: column;
    width: 50rem;
-   height: 30rem;
+   height: fit-content;
    position: absolute;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
+   text-align: left;
    
    
 }

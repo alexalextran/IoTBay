@@ -26,6 +26,7 @@
             <div class="main__account">
               <h2>Account & Details</h2>
             <a href="UpdateCustomer.jsp">Update Details</a>
+            <a>Access Logs</a>
              <a href="DeleteUser.jsp">Delete account</a>
             <a href="Logout.jsp">Log out</a>
            
