@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/css.css">
         <title>JSP Page</title>
         <%
              Customer customer = (Customer)session.getAttribute("customer"); 
@@ -22,10 +23,10 @@
             
         
     </head>
-    <body
-        <div>
-            Your account has been deleted successfully
-            <a href="index.html">Click here to head back to the start</a>
+    <body>
+        <div class="welcome__details box-shadow">
+            <h1>Your account has been <span class="blue">deleted</span> successfully</h1>
+            <a href="index.html" class="button__link">Click here to head back to the start</a>
         </div>
     </body>
 </html>

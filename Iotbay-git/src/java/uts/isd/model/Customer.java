@@ -62,6 +62,11 @@ public class Customer implements Serializable{
         return id;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+    
+
     public String getName() {
         return name;
     }

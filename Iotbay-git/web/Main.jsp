@@ -17,12 +17,15 @@
               %> 
     </head>
     <body>
-        <header>Hey ${customer.name} welcome to IOT BAY!</header>
+        <div class="welcome__gretting"> 
+            <h1>Hey <span class="blue">${customer.name}</span> welcome to IOT BAY!</h1>
+        </div>
+       
         <div class='main__div'>
             
             <div class="main__account">
               <h2>Account & Details</h2>
-            <a href="Update.jsp">Update Details</a>
+            <a href="UpdateCustomer.jsp">Update Details</a>
              <a href="DeleteUser.jsp">Delete account</a>
             <a href="Logout.jsp">Log out</a>
            

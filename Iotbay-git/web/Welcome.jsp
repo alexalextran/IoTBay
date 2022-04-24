@@ -46,12 +46,17 @@
         </div>
         
         <div class='welcome__details box-shadow'>
-            <table class="welcome__table">
+           <table class="welcome__table">
      <tr>
+     <th>ID</th>
     <th>Name</th>
     <th>Email</th>
     <th>Password</th>
+     <th>Phone</th>
   </tr>
+  <td>
+      <%out.println(customer.getId());%>
+  </td>
   <td>
       <%out.println(customer.getName());%>
   </td>
@@ -61,9 +66,12 @@
   <td>
       <%out.println(customer.getPassword());%>
   </td>
+  <td>
+      <%out.println(customer.getPhone());%>
+  </td>
         </table>
      
-  <a href="Main.jsp"> Proceed to the main page!</a>
+  <a href="Main.jsp" class="button__link"> Proceed to the main page!</a>
          </div>
             
              <% } else{
@@ -86,10 +94,15 @@
         <div class='welcome__details box-shadow'>
             <table class="welcome__table">
      <tr>
+     <th>ID</th>
     <th>Name</th>
     <th>Email</th>
     <th>Password</th>
+     <th>Phone</th>
   </tr>
+  <td>
+      <%out.println(customer.getId());%>
+  </td>
   <td>
       <%out.println(customer.getName());%>
   </td>
@@ -99,9 +112,12 @@
   <td>
       <%out.println(customer.getPassword());%>
   </td>
+  <td>
+      <%out.println(customer.getPhone());%>
+  </td>
         </table>
      
-  <a href="Main.jsp"> Proceed to the main page!</a>
+  <a href="Main.jsp" class="button__link"> Proceed to the main page!</a>
          </div>
              
              
@@ -111,9 +127,9 @@
         </div>
         
         <div class='welcome__details box-shadow'>
-            <h1>The details entered were not correct please try again!</h1>
+            <h1>The details entered were <span class="blue">incorrect</span> please try again!</h1>
      
-  <a href="Login.jsp"> Try again?</a>
+  <a href="Login.jsp" class="button__link"> Try again?</a>
          </div>
              <%
              }
