@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author atran
  */
 public class Customer implements Serializable{
+    private int id;
     private String name;
     private String email;
     private String password;
@@ -19,8 +20,10 @@ public class Customer implements Serializable{
     private ArrayList<Order> order;
     private Products products;
     
+    
 
-    public Customer(String name, String email, String password, String phone) {
+    public Customer(int id, String name, String email, String password, String phone) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -48,6 +51,16 @@ public class Customer implements Serializable{
    //ublic Product findProduct(String name){
        //turn products.findProduct();
    //
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

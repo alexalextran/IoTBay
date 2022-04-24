@@ -16,14 +16,13 @@
              Customer customer = (Customer)session.getAttribute("customer"); 
              
              DeleteUser is = new DeleteUser();
-             String result = is.Delete(is.getConnDB(), customer.getName());
+             is.Delete(is.getConnDB(), customer.getName());
              
             %>
             
         
     </head>
-    <body>
-         <%= result %>
+    <body
         <div>
             Your account has been deleted successfully
             <a href="index.html">Click here to head back to the start</a>

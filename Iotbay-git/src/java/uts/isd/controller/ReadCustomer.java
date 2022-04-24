@@ -30,9 +30,10 @@ public class ReadCustomer{
           String customerEmail = rs.getString(3);
           String customerPassword = rs.getString(4);
           if(customerEmail.equals(email) && customerPassword.equals(password)){
+               int customerId = rs.getInt(1);
               String customerName = rs.getString(2);
               String customerPhone = rs.getString(5);
-              Customer customer = new Customer(customerName, customerEmail, customerPassword, customerPhone);
+              Customer customer = new Customer(customerId, customerName, customerEmail, customerPassword, customerPhone);
           return customer;
       }
       }

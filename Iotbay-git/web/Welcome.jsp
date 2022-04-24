@@ -8,6 +8,7 @@
 <%@page import="uts.isd.model.Customer"%>
 <%@page import="uts.isd.controller.InsertCustomer"%>
 <%@page import="uts.isd.controller.ReadCustomer"%>
+<%@page import="uts.isd.controller.FindCustomer"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,12 +25,18 @@
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
-            Customer customer = new Customer(name, email , password, phone);
+            
+            InsertCustomer is = new InsertCustomer();
+             is.Insert(is.getConnDB(), name, email, password, phone);
+             
+             FindCustomer findCustomer = new FindCustomer();
+             Customer customer = findCustomer.Find(findCustomer.getConnDB(), name, email, password, phone);
+             
+           
             
             session.setAttribute("customer", customer);
             
-             InsertCustomer is = new InsertCustomer();
-             is.Insert(is.getConnDB(), name, email, password, phone);
+             
              %>
                
         <div class="welcome__gretting">
@@ -101,8 +108,6 @@
              <%
              } else{
             %>
-                  
-       
         </div>
         
         <div class='welcome__details box-shadow'>
@@ -113,9 +118,6 @@
              <%
              }
              }
-            
-             
-             
         %> 
         
       

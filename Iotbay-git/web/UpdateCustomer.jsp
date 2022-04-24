@@ -5,6 +5,8 @@
 --%>
 
 <%@page import="uts.isd.model.Customer"%>
+<%@page import="uts.isd.controller.UpdateCustomer"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,12 +16,18 @@
     </head>
     <body>
         <% 
-            if(request.getParameter("email") != null || request.getParameter("password") != null || request.getParameter("name") != null){
-            Customer customer = (Customer)session.getAttribute("customer"); 
+             Customer customer = (Customer)session.getAttribute("customer"); 
+            if(request.getParameter("email") != null || request.getParameter("password") != null || request.getParameter("name") != null || request.getParameter("name") != null){
+           
+            UpdateCustomer updateCustomer = new UpdateCustomer();
+            updateCustomer.Update(request.getParameter("name"), request.getParameter("email"), request.getParameter("password"), request.getParameter("phone"), customer.getId());
+       
+            
             customer.setName(request.getParameter("name"));
             customer.setEmail(request.getParameter("email"));
             customer.setPassword(request.getParameter("password"));
-            //session.setAttribute("customer", customer);
+            customer.setPhone(request.getParameter("phone"));
+          
             }
             
          Customer customer = (Customer)session.getAttribute("customer"); 
@@ -28,6 +36,7 @@
             <input type="text" name="name" value="${customer.name}" />
             <input type="text" name="email" value="${customer.email}" />
             <input type="text" name="password" value="${customer.password}"/>
+            <input type="text" name="phone" value="${customer.phone}"/>
             <button>Submit</button>
         </form>
             

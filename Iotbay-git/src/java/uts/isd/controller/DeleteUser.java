@@ -25,7 +25,7 @@ public class DeleteUser{
     String sqlQuery = "DELETE FROM ALIZA.\"Users\" WHERE NAME = '"+name+"' ";
     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);
-      return "Staff record added successfully"; 
+      return "User deleted Succesfully"; 
       } catch (SQLException e) {
         return "Got an exception! " + e.getMessage(); 
     }   
