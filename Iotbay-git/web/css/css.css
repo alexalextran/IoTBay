@@ -76,7 +76,7 @@ INDEX PAGE
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: fit-content;
     height: 30%;
     position: absolute;
    left: 50%;
