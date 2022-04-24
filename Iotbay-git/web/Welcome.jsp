@@ -6,7 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.Customer"%>
-<%@page import="uts.isd.controller.InsertUser"%>
+<%@page import="uts.isd.controller.InsertCustomer"%>
+<%@page import="uts.isd.controller.ReadCustomer"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,8 +19,8 @@
       
            
          <%
- 
-            String name = request.getParameter("Name");
+             if(request.getParameter("Name") != null){
+                    String name = request.getParameter("Name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
@@ -27,16 +28,13 @@
             
             session.setAttribute("customer", customer);
             
-             InsertUser is = new InsertUser();
-             String result = is.Insert(is.getConnDB(), name, email, password, phone);
-             
-             
-        %> 
-        
-        
+             InsertCustomer is = new InsertCustomer();
+             is.Insert(is.getConnDB(), name, email, password, phone);
+             %>
+               
         <div class="welcome__gretting">
             
-            <h1>Welcome <span class="blue"><%out.println(name);%></span> you successfully logged in</h1>
+            <h1>Welcome <span class="blue"><%out.println(customer.getName());%></span> you successfully registered in</h1>
         <h1>Your details are</h1>
         </div>
         
@@ -48,18 +46,79 @@
     <th>Password</th>
   </tr>
   <td>
-      <%out.println(name);%>
+      <%out.println(customer.getName());%>
   </td>
   <td>
-      <%out.println(email);%>
+      <%out.println(customer.getEmail());%>
   </td>
   <td>
-      <%out.println(password);%>
+      <%out.println(customer.getPassword());%>
   </td>
         </table>
-     <%= result %>
+     
   <a href="Main.jsp"> Proceed to the main page!</a>
          </div>
+            
+             <% } else{
+             ReadCustomer readCustomer = new ReadCustomer();
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+     
+         
+             if(readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")) != null){
+             Customer customer = readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
+             session.setAttribute("customer", readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")));
+              
+             %>
+              <div class="welcome__gretting">
+            
+            <h1>Welcome <span class="blue"><%out.println(customer.getName());%></span> you successfully logged in</h1>
+        <h1>Your details are</h1>
+        </div>
+        
+        <div class='welcome__details box-shadow'>
+            <table class="welcome__table">
+     <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+  </tr>
+  <td>
+      <%out.println(customer.getName());%>
+  </td>
+  <td>
+      <%out.println(customer.getEmail());%>
+  </td>
+  <td>
+      <%out.println(customer.getPassword());%>
+  </td>
+        </table>
+     
+  <a href="Main.jsp"> Proceed to the main page!</a>
+         </div>
+             
+             
+             <%
+             } else{
+            %>
+                  
+       
+        </div>
+        
+        <div class='welcome__details box-shadow'>
+            <h1>The details entered were not correct please try again!</h1>
+     
+  <a href="Login.jsp"> Try again?</a>
+         </div>
+             <%
+             }
+             }
+            
+             
+             
+        %> 
+        
+      
        
             
             
