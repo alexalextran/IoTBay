@@ -161,7 +161,7 @@
              
            
             
-            session.setAttribute("customer", customer);
+            session.setAttribute("user", customer);
             
              
              %>
@@ -210,7 +210,7 @@
             //SUCCESFFUL LOGIN
              if(readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")) != null){
              Customer customer = readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
-             session.setAttribute("customer", readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")));
+             session.setAttribute("user", customer);
               
              %>
               <div class="welcome__gretting">

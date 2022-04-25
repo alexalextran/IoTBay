@@ -6,7 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.Customer"%>
+<%@page import="uts.isd.model.Staff"%>
 <%@page import="uts.isd.controller.DeleteUser"%>
+<%@page import="uts.isd.controller.DeleteStaff"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,10 +16,19 @@
         <link rel="stylesheet" href="css/css.css">
         <title>JSP Page</title>
         <%
-             Customer customer = (Customer)session.getAttribute("customer"); 
-             
+            if(request.getParameter("user").equals("customer")){
+              Customer customer = (Customer)session.getAttribute("user"); 
              DeleteUser is = new DeleteUser();
-             is.Delete(is.getConnDB(), customer.getName());
+             is.Delete(is.getConnDB(), customer.getId());
+             session.invalidate();
+        }
+            else{
+                Staff staff = (Staff)session.getAttribute("user"); 
+                DeleteStaff ds = new DeleteStaff();
+                String result = ds.delete(ds.getConnDB(), staff.getid());
+                session.invalidate();
+                    }
+           
              
             %>
             

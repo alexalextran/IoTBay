@@ -21,8 +21,8 @@ public class DeleteUser{
         return connDB;
     }
     
-    public static String Delete(Connection conn, String name) throws SQLException {
-    String sqlQuery = "DELETE FROM ALIZA.\"Users\" WHERE NAME = '"+name+"' ";
+    public static String Delete(Connection conn, int id) throws SQLException {
+    String sqlQuery = "DELETE FROM ALIZA.\"Users\" WHERE ID = "+id+" ";
     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);
       return "User deleted Succesfully"; 
@@ -31,7 +31,10 @@ public class DeleteUser{
     }   
         
   }
+    
+    
+        
+  }
 
-}
 
 

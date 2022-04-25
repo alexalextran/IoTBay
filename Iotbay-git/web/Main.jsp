@@ -19,13 +19,13 @@
     </head>
     <%
         if(request.getParameter("user").equals("customer")){
-         Customer customer = (Customer)session.getAttribute("customer"); 
+         Customer customer = (Customer)session.getAttribute("user"); 
         %>
         
         
     <body>
         <div class="welcome__gretting"> 
-            <h1>Hey <span class="blue">${customer.name}</span> welcome to IOT BAY!</h1>
+            <h1>Hey <span class="blue"><%out.println(customer.getName());%></span> welcome to IOT BAY!</h1>
         </div>
        
         <div class='main__div'>
@@ -34,7 +34,7 @@
               <h2>Account & Details</h2>
             <a href="UpdateCustomer.jsp">Update Details</a>
             <a>Access Logs</a>
-             <a href="DeleteUser.jsp">Delete account</a>
+             <a href="DeleteUser.jsp?user=customer">Delete account</a>
             <a href="Logout.jsp">Log out</a>
            
         </div>
@@ -58,7 +58,7 @@
       
             <body>
         <div class="welcome__gretting"> 
-            <h1>Hey <span class="green">${staff.fname}</span> welcome to IOT <span class="green">Staff</span> System</h1>
+            <h1>Hey <span class="green"><%out.println(staff.getFirstName());%></span> welcome to IOT <span class="green">Staff</span> System</h1>
         </div>
        
         <div class='main__div'>
@@ -67,7 +67,7 @@
               <h2>Account & Details</h2>
             <a class="greenBG" href="UpdateCustomer.jsp ">Update Details</a>
             <a class="greenBG">Access Logs</a>
-             <a class="greenBG" href="DeleteUser.jsp">Delete account</a>
+             <a class="greenBG" href="DeleteUser.jsp?user=staff">Delete account</a>
             <a class="greenBG" href="Logout.jsp">Log out</a>
            
         </div>
