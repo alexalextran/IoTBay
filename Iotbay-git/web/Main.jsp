@@ -20,6 +20,7 @@
     <%
         if(request.getParameter("user").equals("customer")){
          Customer customer = (Customer)session.getAttribute("user"); 
+//Customers
         %>
         
         
