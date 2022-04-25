@@ -50,9 +50,7 @@ public class Customer implements Serializable{
         this.password = password;
     }
     
-   //ublic Product findProduct(String name){
-       //turn products.findProduct();
-   //
+  
 
     public void setPhone(String phone) {
         this.phone = phone;
