@@ -51,7 +51,7 @@
             <input type="text" name="phone" value="<% out.println(customer.getPhone()); %>"/>
             <button class="button__link">Submit</button>
         </form>
-            
+          
             <a href="Main.jsp?user=customer">Back to welcome page</a>
             </div>
           <%
