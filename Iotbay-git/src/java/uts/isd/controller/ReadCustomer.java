@@ -60,7 +60,7 @@ public class ReadCustomer{
                
               
               
-              Staff staff = new Staff(staffId, fname, lname, adress, StaffEmail, username, StaffPassword, position, status, mobile );
+              Staff staff = new Staff(staffId, fname, lname, StaffEmail, position, adress, username, StaffPassword, status, mobile );
           return staff;
       }
       }

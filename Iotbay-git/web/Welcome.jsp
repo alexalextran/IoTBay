@@ -22,6 +22,7 @@
       
            
          <%
+             //REGISTERING A STAFF MEMBER
              if(request.getParameter("staffStatus") != null){
              String fname = request.getParameter("fname");
               String lname = request.getParameter("lname");
@@ -35,6 +36,10 @@
              InsertStaff is = new InsertStaff();
              String result = is.Insert(is.getConnDB(), fname,lname, email, position, address, username, password, staffStatus, mobile);
              
+              FindCustomer findCustomer = new FindCustomer();
+             Staff staff = findCustomer.FindStaff(findCustomer.getConnDB(), fname, email, password, mobile);
+              session.setAttribute("user", staff);
+             
              %>
              
              
@@ -47,48 +52,90 @@
         <div class='welcome__details box-shadow'>
            <table class="welcome__table">
      <tr>
-     <th>ID</th>
+     <th>Staff ID</th>
     <th>Name</th>
     <th>Email</th>
     <th>Password</th>
      <th>Phone</th>
+     <th>Position</th>
   </tr>
   <td>
-      <%out.println(1);%>
+      <%out.println(staff.getid());%>
   </td>
   <td>
-      <%out.println(fname);%>
+      <%out.println(staff.getFirstName() + " " + staff.getLastName());%>
   </td>
   <td>
-      <%out.println(email);%>
+      <%out.println(staff.getEmail());%>
   </td>
   <td>
-      <%out.println(password);%>
+      <%out.println(staff.getPassword());%>
   </td>
   <td>
-      <%out.println(mobile);%>
+      <%out.println(staff.getMobileNumber());%>
+  </td>
+  <td>
+      <%out.println(staff.getPosition());%>
   </td>
         </table>
      
-  <a href="Main.jsp" class="button__link"> Proceed to the main page!</a>
+  <a href="Main.jsp?user=staff" class="button__link"> Proceed to the main page!</a>
          </div>
              <%
              }
+             // LOGGING IN A STAFF MEMBER
             else if(request.getParameter("staffStatus") == null && request.getParameter("Name") == null && request.getParameter("position") != null) {
             ReadCustomer readCustomer = new ReadCustomer();
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             
-     
+            //SUCCESSFUL LOGIN
              if(readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")) != null){
              Staff staff = readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
              session.setAttribute("user", readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")));
              %>
-              
-                Your staff details are correct!
+                     <div class="welcome__gretting">
+            
+            <h1>Welcome <span class="blue"><%out.println(staff.getFirstName());%></span> you successfully registered</h1>
+        <h1>Your details are</h1>
+        </div>
+        
+        <div class='welcome__details box-shadow'>
+           <table class="welcome__table">
+     <tr>
+     <th>Staff ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+     <th>Phone</th>
+     <<th>Position</th>
+  </tr>
+  <td>
+      <%out.println(staff.getid());%>
+  </td>
+  <td>
+      <%out.println(staff.getFirstName() + " " + staff.getLastName());%>
+  </td>
+  <td>
+      <%out.println(staff.getEmail());%>
+  </td>
+  <td>
+      <%out.println(staff.getPassword());%>
+  </td>
+  <td>
+      <%out.println(staff.getMobileNumber());%>
+  </td>
+  <td>
+      <%out.println(staff.getPosition());%>
+  </td>
+        </table>
+     
+  <a href="Main.jsp?user=staff" class="button__link"> Proceed to the main page!</a>
+         </div>
                 <%
                 }
             else{
+            //FAILED LOGIN
                 %>
                   <div class='welcome__details box-shadow'>
             <h1>The details entered were <span class="blue">incorrect</span> please try again!</h1>
@@ -99,9 +146,7 @@
                 } 
                 }
              else{
-             
-             
-             
+            // REGISTERING A CUSTOMER
             if(request.getParameter("Name") != null){
                     String name = request.getParameter("Name");
             String email = request.getParameter("email");
@@ -130,7 +175,7 @@
         <div class='welcome__details box-shadow'>
            <table class="welcome__table">
      <tr>
-     <th>ID</th>
+     <th>Customer ID</th>
     <th>Name</th>
     <th>Email</th>
     <th>Password</th>
@@ -153,15 +198,16 @@
   </td>
         </table>
      
-  <a href="Main.jsp" class="button__link"> Proceed to the main page!</a>
+  <a href="Main.jsp?user=customer" class="button__link"> Proceed to the main page!</a>
          </div>
             
              <% } else{
+             //LOGGIN IN A CUSTOMER
              ReadCustomer readCustomer = new ReadCustomer();
             String email = request.getParameter("email");
             String password = request.getParameter("password");
      
-         
+            //SUCCESFFUL LOGIN
              if(readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")) != null){
              Customer customer = readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
              session.setAttribute("customer", readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")));
@@ -176,7 +222,7 @@
         <div class='welcome__details box-shadow'>
             <table class="welcome__table">
      <tr>
-     <th>ID</th>
+     <th>Customer ID</th>
     <th>Name</th>
     <th>Email</th>
     <th>Password</th>
@@ -199,12 +245,13 @@
   </td>
         </table>
      
-  <a href="Main.jsp" class="button__link"> Proceed to the main page!</a>
+  <a href="Main.jsp?user=customer" class="button__link"> Proceed to the main page!</a>
          </div>
              
              
              <%
              } else{
+               //FAILED LOGIN
             %>
         </div>
         
@@ -216,7 +263,7 @@
              <%
              }
              }
-}
+             }
         %> 
         
       
