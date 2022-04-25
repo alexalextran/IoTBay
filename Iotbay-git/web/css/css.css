@@ -20,6 +20,7 @@ a{
 html{
     font-size: 1vw;
     --blue: rgb(0,103,242);
+    --green: rgb(20,206,94);
     font-family: Arial, sans-serif;
     
 }
@@ -27,6 +28,34 @@ html{
 .blue{
     color: var(--blue);
 }
+
+.green{
+    color: var(--green) !important;
+}
+
+.greenBG{
+    background-color: var(--green) !important;
+    color: white !important;
+    transition: all 300ms;
+}
+
+.greenBG:Hover{
+    background-color: white !important;
+    color: var(--green) !important;
+}
+
+.greenBorder{
+    border-bottom-color: var(--green) !important;
+    transition: all 300ms;
+}
+
+.greenBorder:focus{
+     border-bottom-color: black !important;
+}
+
+
+
+
 
 body{
     text-align: center;
@@ -96,6 +125,8 @@ LOGIN  AND REGISTER PAGE
     background-color: var(--blue);
     color: white;
     border-radius: 0.5rem;
+    border: none;
+    outline: none;
 }
 
 .enterform{
@@ -186,6 +217,7 @@ WELCOME PAGE
     
     
 }
+
 
 .welcome__details a{
     margin-top: 1rem;

@@ -17,10 +17,10 @@
             
           <h1>Login</h1>
           <form class="enterform__input" action="Welcome.jsp" method="POST">
-            <input type="text" name="email" value="" placeholder="Email"/>
-            <input type="text" name="position" value="" placeholder="Position"/>
-            <input type="text" name="password" value="" placeholder="Password"/>
-            <button class='button'>Login </button>
+            <input class="greenBorder" type="text" name="email" value="" placeholder="Email"/>
+            <input class="greenBorder" type="text" name="position" value="" placeholder="Position"/>
+            <input  class="greenBorder" type="text" name="password" value="" placeholder="Password"/>
+            <button class='button greenBG'>Login </button>
         </form>
           
           <a href="Register.jsp">Don't have an account? click here!</a>

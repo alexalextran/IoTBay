@@ -52,29 +52,30 @@
     <%
     
     } else{
+//staff main menu
  Staff staff = (Staff)session.getAttribute("user"); 
         %>
       
             <body>
         <div class="welcome__gretting"> 
-            <h1>Hey <span class="blue">${staff.fname}</span> welcome to IOT Staff System</h1>
+            <h1>Hey <span class="green">${staff.fname}</span> welcome to IOT <span class="green">Staff</span> System</h1>
         </div>
        
         <div class='main__div'>
             
-            <div class="main__account">
+            <div class="main__account" style="border-right-color:  rgb(20,206,94);">
               <h2>Account & Details</h2>
-            <a href="UpdateCustomer.jsp">Update Details</a>
-            <a>Access Logs</a>
-             <a href="DeleteUser.jsp">Delete account</a>
-            <a href="Logout.jsp">Log out</a>
+            <a class="greenBG" href="UpdateCustomer.jsp ">Update Details</a>
+            <a class="greenBG">Access Logs</a>
+             <a class="greenBG" href="DeleteUser.jsp">Delete account</a>
+            <a class="greenBG" href="Logout.jsp">Log out</a>
            
         </div>
             
             <div class='main__products'>
                 <h2>Orders & Products</h2>
-                <a href="Products.jsp">View Products </a>
-                <a href="AddProducts.jsp">Add Products</a>
+                <a class="greenBG" href="Products.jsp">View Products </a>
+                <a class="greenBG" href="AddProducts.jsp">Add Products</a>
                
                 
             </div>
