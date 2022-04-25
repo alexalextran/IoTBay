@@ -41,8 +41,9 @@
             
             <div class='main__products'>
                 <h2>Orders & Products</h2>
-                <a href="Products.jsp">View Products </a>
-                <a href="Products.jsp">My Orders</a>
+                <a href="ADD YOUR LINK HERE">View Products </a>
+                <a href="ADD YOUR LINK HERE">My Orders</a>
+                  <a href="ADD YOUR LINK HERE">Payment Details </a>
                 
             </div>
             
@@ -74,8 +75,9 @@
             
             <div class='main__products'>
                 <h2>Orders & Products</h2>
-                <a class="greenBG" href="Products.jsp">View Products </a>
-                <a class="greenBG" href="AddProducts.jsp">Add Products</a>
+                <a class="greenBG" href="ADD YOUR LINK HERE">View Products </a>
+                <a class="greenBG" href="ADD YOUR LINK HERE">Add Products</a>
+      
                
                 
             </div>

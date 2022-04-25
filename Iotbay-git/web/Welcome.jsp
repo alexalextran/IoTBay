@@ -108,7 +108,7 @@
     <th class="green">Email</th>
     <th class="green">Password</th>
      <th class="green">Phone</th>
-     <<th class="green">Position</th>
+     <th class="green">Position</th>
   </tr>
   <td>
       <%out.println(staff.getid());%>
