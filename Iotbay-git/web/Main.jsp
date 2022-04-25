@@ -54,6 +54,7 @@
     
     } else{
 //staff main menu
+//lol
  Staff staff = (Staff)session.getAttribute("user"); 
         %>
       
