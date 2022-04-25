@@ -49,15 +49,15 @@
         <h1>Your details are</h1>
         </div>
         
-        <div class='welcome__details box-shadow green'>
+        <div class='welcome__details box-shadow'>
            <table class="welcome__table">
      <tr>
-     <th>Staff ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Password</th>
-     <th>Phone</th>
-     <th>Position</th>
+         <th class="green">Staff ID</th>
+    <th class="green">Name</th>
+    <th class="green">Email</th>
+    <th class="green">Password</th>
+     <th class="green">Phone</th>
+     <th class="green">Position</th>
   </tr>
   <td>
       <%out.println(staff.getid());%>
