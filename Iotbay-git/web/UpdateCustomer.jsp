@@ -17,7 +17,9 @@
     </head>
     <body>
         <% 
-             Customer customer = (Customer)session.getAttribute("customer"); 
+            if(request.getParameter("user").equals('customer')){
+            
+            Customer customer = (Customer)session.getAttribute("user"); 
             if(request.getParameter("email") != null || request.getParameter("password") != null || request.getParameter("name") != null || request.getParameter("name") != null){
            
             UpdateCustomer updateCustomer = new UpdateCustomer();
@@ -29,7 +31,7 @@
             customer.setPassword(request.getParameter("password"));
             customer.setPhone(request.getParameter("phone"));
             %>
-            <div class="welcome__gretting">
+             <div class="welcome__gretting">
                 <h1>Your details have been successfully changed</h1> 
             </div>
            
@@ -48,10 +50,10 @@
             
             <a href="Main.jsp">Back to welcome page</a>
             </div>
-           <% 
-               } else{ 
-           %>
-           <div class="enterform box-shadow">
+          <%
+        } else{
+            %>
+              <div class="enterform box-shadow">
                 <form class="enterform__input" method="POST" action="UpdateCustomer.jsp">
               <h3>Name</h3>
             <input type="text" name="name" value="${customer.name}" />
@@ -66,6 +68,83 @@
             
             <a href="Main.jsp">Back to welcome page</a>
             </div>
+          <%
+          }
+        } else{
+            
+            Staff staff = (Staff)session.getAttribute("user"); 
+            String updatedfname = request.getParameter("updatedfname");
+            String updatedlname = request.getParameter("updatedlname");
+            String updatedaddress = request.getParameter("updatedaddress");
+            String updatedemail = request.getParameter("updatedemail");
+            String updatedusername = request.getParameter("updatedusername");
+            String updatedpassword = request.getParameter("updatedpassword");
+            String updatedposition = request.getParameter("updatedposition");
+            String updatedmobile = request.getParameter("updatedmobile");
+           boolean updatedStatus = true;
+            if(updatedfname != null || updatedlname != null || updatedaddress != null || updatedemail != null || updatedusername != null || updatedpassword != null || updatedposition != null || updatedmobile != null){
+           
+           UpdateStaff us = new UpdateStaff();
+           us.Update(us.getConnDB(), staff.getI, fname,lname, email, position, address, username, password, staffStatus, mobile);
+           );
+       
+            
+            customer.setName(request.getParameter("name"));
+            customer.setEmail(request.getParameter("email"));
+            customer.setPassword(request.getParameter("password"));
+            customer.setPhone(request.getParameter("phone"));
+              %>
+              
+              <div class="enterform box-shadow">
+                <form class="enterform__input" method="POST" action="UpdateCustomer.jsp">
+             
+                <h3>First Name</h3>
+                <input type="text" name="updatedfname" value="<%= selectedfname %>">
+           
+            
+                <h3>Last Name</h3>
+                <input type="text" name="updatedlname" value="<%= selectedlname %>">
+           
+            
+                <h3>Home Address</h3>
+                <input type="text"name="updatedaddress" value="<%= selectedaddress %>">
+            
+            
+              <h3>Email address</h3>
+              <input type="email" name="updatedemail" value="<%= selectedemail %>">
+            
+            
+                <h3>Username</h3>
+                <input type="text" name="updatedusername" value="<%= selectedusername %>"> 
+            
+            
+              <h3>Password</h3>
+              <input type="password" name="updatedpassword" value="<%= selectedpassword %>">
+            
+            
+                <h3>Position</h3>
+                <input type="text" name="updatedposition" value="<%= selectedposition %>">
+            
+            
+                <h3>Mobile Number</h3>
+                <input type="text" name="updatedmobile" value="<%= selectedmobile %>">
+            
+             
+                <h3>Staff Status</h3>
+                <input type="text" name="updatedstaffStatus" value="<%= selectedstaffStatus %>">
+            
+         <button class="button__link">Submit</button>
+        </form>
+             
+            
+              <a href="Main.jsp">Back to Main page</a>
+             </div>
+            <%
+                }
+          
+           
+           
+               } else{ 
             <% 
             }
         %>

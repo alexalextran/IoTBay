@@ -32,7 +32,7 @@
             
             <div class="main__account">
               <h2>Account & Details</h2>
-            <a href="UpdateCustomer.jsp">Update Details</a>
+            <a href="UpdateCustomer.jsp?user=customer">Update Details</a>
             <a>Access Logs</a>
              <a href="DeleteUser.jsp?user=customer">Delete account</a>
             <a href="Logout.jsp">Log out</a>
@@ -65,7 +65,7 @@
             
             <div class="main__account" style="border-right-color:  rgb(20,206,94);">
               <h2>Account & Details</h2>
-            <a class="greenBG" href="UpdateCustomer.jsp ">Update Details</a>
+              <a class="greenBG" href="UpdateCustomer.jsp?user=staff">Update Details</a>
             <a class="greenBG">Access Logs</a>
              <a class="greenBG" href="DeleteUser.jsp?user=staff">Delete account</a>
             <a class="greenBG" href="Logout.jsp">Log out</a>

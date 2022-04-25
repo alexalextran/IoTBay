@@ -10,11 +10,11 @@ import uts.isd.model.database.DataBaseConnector;
 
 
 
-public class FindCustomer{ 
+public class FindUser{ 
     private DataBaseConnector dbConn;
     private Connection connDB; 
     
-    public FindCustomer() throws ClassNotFoundException, SQLException {
+    public FindUser() throws ClassNotFoundException, SQLException {
        this.dbConn = new DataBaseConnector();
        connDB = dbConn.connectionStart();
     }

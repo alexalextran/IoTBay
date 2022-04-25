@@ -31,6 +31,7 @@
        
         %>
     <body >
+        <a href="../src/java/uts/isd/model/Staff.java"></a>
         <div class="container">
         <h1>Edit Staff Details</h1>
         <form action="updatedStaff.jsp?id=<%= id %>" method="POST">

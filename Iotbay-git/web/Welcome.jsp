@@ -8,7 +8,7 @@
 <%@page import="uts.isd.model.Customer"%>
 <%@page import="uts.isd.controller.InsertCustomer"%>
 <%@page import="uts.isd.controller.ReadCustomer"%>
-<%@page import="uts.isd.controller.FindCustomer"%>
+<%@page import="uts.isd.controller.FindUser"%>
 <%@page import="uts.isd.model.Staff"%>
 <%@page import="uts.isd.controller.InsertStaff"%>
 <!DOCTYPE html>
@@ -36,8 +36,8 @@
              InsertStaff is = new InsertStaff();
              String result = is.Insert(is.getConnDB(), fname,lname, email, position, address, username, password, staffStatus, mobile);
              
-              FindCustomer findCustomer = new FindCustomer();
-             Staff staff = findCustomer.FindStaff(findCustomer.getConnDB(), fname, email, password, mobile);
+              FindUser finduser = new FindUser();
+             Staff staff = finduser.FindStaff(finduser.getConnDB(), fname, email, password, mobile);
               session.setAttribute("user", staff);
              
              %>
@@ -156,8 +156,8 @@
             InsertCustomer is = new InsertCustomer();
              is.Insert(is.getConnDB(), name, email, password, phone);
              
-             FindCustomer findCustomer = new FindCustomer();
-             Customer customer = findCustomer.Find(findCustomer.getConnDB(), name, email, password, phone);
+             FindUser finduser = new FindUser();
+             Customer customer = finduser.Find(finduser.getConnDB(), name, email, password, phone);
              
            
             
