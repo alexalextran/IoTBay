@@ -98,7 +98,7 @@ INDEX PAGE
 }
 
 .indexpage__nav{
-    padding: 5rem;
+    padding: 2rem;
     background-color: rgb(226,226,226);
     border-radius: 2rem;
     display: flex;
@@ -106,7 +106,7 @@ INDEX PAGE
     justify-content: center;
     align-items: center;
     width: fit-content;
-    height: 30%;
+    height: fit-content;
     position: absolute;
    left: 50%;
    top: 50%;
@@ -280,7 +280,49 @@ MAIN PAGE
     border-right: 2px solid var(--blue);
 }
 
+/*
+
+
+UPDATE PAGE
+
+*/
+.staffform{
+    height: fit-content !important;
+    margin-top: 4rem !important; 
+    
+}
+
+.details__changed{
+    position: absolute;
+    padding: 2rem;
+    left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 10;
+   opacity: 0;
+   animation: fade 4s linear;
+   background-color: white;
+   border-radius: 1rem;
+    
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    
+    50%{
+        opacity: 1;
+    }  
+    
+    100%{
+        opacity: 0;
+    }
+}
+
 /* 
+
+
 
 LOGOUT
 
