@@ -36,7 +36,7 @@
             customer.setPhone(request.getParameter("phone"));
             %>
                 <div class="details__changed">
-                   <h1>Your details have been <span class="blue">successfully</span> changed</h1> 
+                   <h1>Your details have been <span>successfully</span> changed</h1> 
                   </div> 
            
            
@@ -93,7 +93,7 @@
               %>
               
                <div class="details__changed">
-                   <h1>Your details have been <span class="blue">successfully</span> changed</h1> 
+                   <h1>Your details have been <span>successfully</span> changed</h1> 
                   </div> 
             <%
                } 

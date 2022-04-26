@@ -23,7 +23,7 @@
            
          <%
              //REGISTERING A STAFF MEMBER
-             if(request.getParameter("staffStatus") != null){
+             if(request.getParameter("user").equals("staffregister")){
              String fname = request.getParameter("fname");
               String lname = request.getParameter("lname");
               String address = request.getParameter("address");
@@ -35,8 +35,7 @@
              Boolean staffStatus = true;
              InsertStaff is = new InsertStaff();
              String result = is.Insert(is.getConnDB(), fname,lname, email, position, address, username, password, staffStatus, mobile);
-             
-              FindUser finduser = new FindUser();
+             FindUser finduser = new FindUser();
              Staff staff = finduser.FindStaff(finduser.getConnDB(), fname, email, password, mobile);
               session.setAttribute("user", staff);
              
@@ -84,7 +83,7 @@
              <%
              }
              // LOGGING IN A STAFF MEMBER
-            else if(request.getParameter("staffStatus") == null && request.getParameter("Name") == null && request.getParameter("position") != null) {
+            else if(request.getParameter("user").equals("stafflogin")) {
             ReadCustomer readCustomer = new ReadCustomer();
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -94,7 +93,7 @@
              Staff staff = readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
              session.setAttribute("user", readCustomer.ReadStaff(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")));
              %>
-                     <div class="welcome__gretting">
+            <div class="welcome__gretting">
             
             <h1>Welcome <span class="green"><%out.println(staff.getFirstName());%></span> you successfully Logged in</h1>
         <h1>Your details are</h1>
@@ -138,17 +137,17 @@
             //FAILED LOGIN
                 %>
                   <div class='welcome__details box-shadow'>
-            <h1>The details entered were <span class="blue">incorrect</span> please try again!</h1>
+            <h1>The details entered were <span class="green">incorrect</span> please try again!</h1>
      
-             <a href="StaffLogin.jsp" class="button__link"> Try again?</a>
+             <a href="StaffLogin.jsp" class="button__link greenBG"> Try again?</a>
                  </div>
                 <%
                 } 
                 }
              else{
             // REGISTERING A CUSTOMER
-            if(request.getParameter("Name") != null){
-                    String name = request.getParameter("Name");
+            if(request.getParameter("user").equals("customerregister")){
+            String name = request.getParameter("Name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
@@ -158,8 +157,6 @@
              
              FindUser finduser = new FindUser();
              Customer customer = finduser.Find(finduser.getConnDB(), name, email, password, phone);
-             
-           
             
             session.setAttribute("user", customer);
             
@@ -168,7 +165,7 @@
                
         <div class="welcome__gretting">
             
-            <h1>Welcome <span class="blue"><%out.println(customer.getName());%></span> you successfully registered in</h1>
+            <h1>Welcome <span class="blue"><%out.println(customer.getName());%></span> you successfully registered</h1>
         <h1>Your details are</h1>
         </div>
         
@@ -256,9 +253,9 @@
         </div>
         
         <div class='welcome__details box-shadow'>
-            <h1>The details entered were <span class="blue">incorrect</span> please try again!</h1>
+        <h1>The details entered were <span class="blue">incorrect</span> please try again!</h1>
      
-  <a href="Login.jsp" class="button__link"> Try again?</a>
+         <a href="Login.jsp" class="button__link"> Try again?</a>
          </div>
              <%
              }

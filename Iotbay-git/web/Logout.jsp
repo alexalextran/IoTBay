@@ -18,8 +18,8 @@
     </head>
     <body>
         <div class="welcome__details box-shadow">
-            <h1>You have successfully <span class="blue">logged</span> out</h1>
-            <a href="index.html" class="button__link">Click here to head back to the start</a>  
+            <h1>You have successfully <span class="turqoise">logged</span> out</h1>
+            <a href="index.html" class="button__link turqoiseBG">Click here to head back to the start</a>  
         </div>
 
     </body>

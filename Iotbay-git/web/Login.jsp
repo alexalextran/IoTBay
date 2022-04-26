@@ -18,7 +18,7 @@
             
         
           <h1>Login</h1>
-          <form class="enterform__input" action="Welcome.jsp" method="POST">
+          <form class="enterform__input" action="Welcome.jsp?user=customerlogin" method="POST">
             <input type="text" name="email" value="" placeholder="Email"/>
             <input type="text" name="password" value="" placeholder="Password"/>
             <button class='button'>Login </button>

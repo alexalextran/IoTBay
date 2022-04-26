@@ -20,7 +20,7 @@
         
        <div class="container">
         <h1>Register Staff</h1>
-        <form action="Welcome.jsp" method="POST">
+        <form action="Welcome.jsp?user=staffregister" method="POST">
             <div class="form-group">
                 <label for="fname">First Name</label>
                 <input  type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">

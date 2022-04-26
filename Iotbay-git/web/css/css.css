@@ -33,6 +33,20 @@ html{
     color: var(--green) !important;
 }
 
+.turqoise{
+    color: rgb(47,206,195) !important;
+}
+
+.turqoiseBG{
+    background-color: rgb(47,206,195) !important;
+    color: white;
+}
+
+.turqoiseBG:Hover{
+    background-color: white !important;
+    color: rgb(47,206,195) !important;
+}
+
 .greenBG{
     background-color: var(--green) !important;
     color: white !important;
@@ -301,8 +315,10 @@ UPDATE PAGE
    z-index: 10;
    opacity: 0;
    animation: fade 4s linear;
-   background-color: white;
+   background-color: rgb(47,206,195);
+   color: white;
    border-radius: 1rem;
+   
     
 }
 
