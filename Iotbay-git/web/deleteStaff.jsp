@@ -21,16 +21,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Deleted Staff</title>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
 
+  
     <body>
+        <div class="record-wrapper">
+            <div class="records-inner">
          <div class="alert alert-success" role="alert">
-      <%= result %>
-      </div>
+            <img class="tick" src="images/tick.png">
+            <p> <%= result %></p>
+        </div>
+    </div>
       <a href="viewStaff.jsp" class="btn btn-primary">View Staff Members</a>
         
 
        </div>
-       
     </body>
 </html>

@@ -13,11 +13,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Staff Member</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
     <body>
         
        <div class="container">
+           <div class="inner-container">
         <h1>Add Staff Member</h1>
         <form action="addedStaff.jsp" method="POST">
             <div class="form-group">
@@ -56,10 +58,12 @@
                 <label for="staffStatus">Staff Status</label>
                 <input type="text" class="form-control" id="staffStatus" placeholder="Active/Deactive" name="staffStatus">
             </div>
-            
+            <div class="form-butns">
             <button type="submit" class="btn btn-primary">Add</button>
             <a href="viewStaff.jsp" class="btn btn-primary">View Staff Members</a>
+        </div>
           </form>
+        </div>
        </div>
     
     </body>
