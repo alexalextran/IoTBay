@@ -77,8 +77,8 @@
             
             <div class='main__products'>
                 <h2>Orders & Products</h2>
-                <a class="greenBG" href="ADD YOUR LINK HERE">View Products </a>
-                <a class="greenBG" href="ADD YOUR LINK HERE">Add Products</a>
+                <a class="greenBG" href="ProductList.jsp">View Products </a>
+                <a class="greenBG" href="Product.jsp">Add Products</a>
       
                
                 
