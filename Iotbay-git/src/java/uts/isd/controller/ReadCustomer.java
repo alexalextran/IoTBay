@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import uts.isd.model.AcessLog;
 import uts.isd.model.Customer;
 import uts.isd.model.Staff;
 import uts.isd.model.database.DataBaseConnector;
@@ -39,6 +42,29 @@ public class ReadCustomer{
       }
       }
       return null;      
+  }
+        
+        public static void CreateAcessLog(Connection conn, int id, String date) throws SQLException {
+            String sqlQuery = "INSERT INTO ALIZA.\"Acess_Log\" (Date, CUSTOMER_ID) VALUES ('" +date+ "', "+id+")";
+       Statement statement = conn.createStatement();
+       statement.executeUpdate(sqlQuery);
+        }
+        
+         public static  ArrayList<AcessLog> getAcessLogs(Connection conn, int id) throws SQLException {
+    
+         String sqlQuery = "SELECT * FROM ALIZA.\"Acess_Log\" WHERE CUSTOMER_ID = "+id+" "; 
+ 
+        Statement statement = conn.createStatement();
+        ResultSet res = statement.executeQuery(sqlQuery);
+        ArrayList<AcessLog> AcessLogs = new ArrayList <AcessLog>();
+      
+      while (res.next()) {
+        String date = res.getString(2);
+        AcessLog acesslog = new AcessLog(date);
+        AcessLogs.add(acesslog);  
+      }
+        return AcessLogs;
+      
   }
         
      public static Staff ReadStaff(Connection conn, String email, String password) throws SQLException {

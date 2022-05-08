@@ -17,8 +17,7 @@ public class Customer implements Serializable{
     private String email;
     private String password;
     private String phone;
-    private ArrayList<Order> order;
-    private Products products;
+    private ArrayList<AcessLog> AcessLogs;
     
     
 
@@ -28,13 +27,18 @@ public class Customer implements Serializable{
         this.email = email;
         this.password = password;
         this.phone = phone;
-        order = new ArrayList<Order>();
-        products = new Products();
+        
+    }
+
+    public void setAcessLogs(ArrayList<AcessLog> AcessLogs) {
+        this.AcessLogs = AcessLogs;
+    }
+
+    public ArrayList<AcessLog> getAcessLogs() {
+        return AcessLogs;
     }
     
-    public void createOrdrer(String userID, boolean status, String date, String productName){
-      
-    }
+
     
     
 
