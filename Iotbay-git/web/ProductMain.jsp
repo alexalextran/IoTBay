@@ -21,7 +21,7 @@
                <h1 class="staf-title">Product Management System</h1>
                <div class="butns">
                <a href="Product.jsp" class="btn btn-primary">Add Product</a>
-               <a href="productList.jsp" class="btn btn-primary">View Product</a>
+               <a href="ProductList.jsp" class="btn btn-primary">View Product</a>
                 </div>
             </div>
         </div>

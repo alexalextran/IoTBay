@@ -11,24 +11,33 @@ import java.io.Serializable;
  * @author Alex Tran
  */
 public class Product {
+     private int id;
     private String name;
     private int stock;
     private double price;
-    private String description;
+    private String type;
 
-    public Product(String name, int stock, double price, String description) {
+    public Product(int id, String name, int stock, String type, double price) {
+        this.id = id;
         this.name = name;
         this.stock = stock;
         this.price = price;
-        this.description = description;
-        ArrayList AddProduct = new ArrayList<Product>();
-        
+        this.type = type;
+    }
+      public int getid() {
+        return id;
+    }
+       public void setid( int id) {
+        this.id= id;
     }
     
-    public void createProduct(String name, int stock, double price, String description){
-      
+      public Product() {
     }
     
+//    public void createProduct(String name, int stock, double price, String description){
+//      
+//    }
+//    
         public String getname() {
         return name;
     }
@@ -41,8 +50,8 @@ public class Product {
         return price;
     }
         
-        public String getdescription() {
-        return description;
+        public String gettype() {
+        return type;
     }
     
      public void setname(String name) {
@@ -57,8 +66,8 @@ public class Product {
         this.price = price;
     }
     
-    public void setdescription(String description) {
-        this.description = description;
+    public void settype(String type) {
+        this.type = type;
     }
     
     

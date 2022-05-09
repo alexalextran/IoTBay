@@ -12,11 +12,11 @@ import uts.isd.model.database.DataBaseConnector;
 
 
 
-public class FetchProduct{ 
+public class FetchStaff{ 
     private DataBaseConnector dbConn;
     private Connection connDB; 
     
-    public FetchProduct() throws ClassNotFoundException, SQLException {
+    public FetchStaff() throws ClassNotFoundException, SQLException {
                
        this.dbConn = new DataBaseConnector();
        connDB = dbConn.connectionStart();
@@ -58,7 +58,7 @@ public class FetchProduct{
         return StaffList;
      
     } catch (SQLException e) {
-      System.out.println("something went wrong");
+      System.out.println("something swent wrong");
     }
         return null;
        

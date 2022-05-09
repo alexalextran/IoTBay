@@ -7,16 +7,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.*;
-import uts.isd.model.Staff;
+import uts.isd.model.Product;
 import uts.isd.model.database.DataBaseConnector;
 
 
 
-public class FetchStaff{ 
+public class FetchProduct{ 
     private DataBaseConnector dbConn;
     private Connection connDB; 
     
-    public FetchStaff() throws ClassNotFoundException, SQLException {
+    public FetchProduct() throws ClassNotFoundException, SQLException {
                
        this.dbConn = new DataBaseConnector();
        connDB = dbConn.connectionStart();
@@ -26,36 +26,32 @@ public class FetchStaff{
         return connDB;
     }
    
-    public static  List <Staff> getStaff(Connection conn, String params) throws SQLException {
+    public static  List <Product> getProduct(Connection conn, String params) throws SQLException {
     String sqlQuery;
     if(params!=null){
-        sqlQuery = "SELECT * FROM ALIZA.\"Staff\" WHERE position like '%" +params+"%' or fname like '%" +params+"%' or lname like '%" +params+"%'"; 
+        sqlQuery = "SELECT * FROM ALIZA.\"Product\" WHERE NAME like '%" +params+"%' or TYPE like '%" +params+"%'"; 
     }else{
-        sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
+        sqlQuery = "SELECT * FROM ALIZA.\"Product\"";
     }
     //String sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
     try (Statement statement = conn.createStatement()) {
       ResultSet res = statement.executeQuery(sqlQuery);
-      List <Staff> StaffList = new ArrayList <Staff>();
+      List<Product> ProductList = new ArrayList<Product>();
       
 
          
       while (res.next()) {
           
-        Staff currentStaff = new Staff();
-        currentStaff.setid(res.getInt("ID")) ;
-        currentStaff.setFirstName(res.getString("FNAME"));
-        currentStaff.setLastName(res.getString("LNAME"));
-        currentStaff.setAddress(res.getString("ADDRESS"));
-        currentStaff.setEmail(res.getString("EMAIL"));
-        currentStaff.setPosition(res.getString("POSITION"));
-        currentStaff.setMobileNumber(res.getString("MOBILE"));
-        currentStaff.setUsername(res.getString("USERNAME"));
-        currentStaff.setPassword(res.getString("PASSWORD"));
-        currentStaff.setStaffStatus(res.getBoolean("status"));
-        StaffList.add(currentStaff);  
+        Product currentProduct = new Product();
+        currentProduct.setid(res.getInt("ID")) ;
+        currentProduct.setname(res.getString("NAME"));
+        currentProduct.setstock(res.getInt("STOCK"));
+        currentProduct.setprice(res.getDouble("PRICE"));
+        currentProduct.settype(res.getString("TYPE"));
+       
+        ProductList.add(currentProduct);  
       }
-        return StaffList;
+        return ProductList;
      
     } catch (SQLException e) {
       System.out.println("something went wrong");
@@ -65,13 +61,6 @@ public class FetchStaff{
         
         
   }
-//     public static void main(String[] args) throws ClassNotFoundException, SQLException{
-//        FetchStaff fs = new FetchStaff();
-//        List <Staff> StaffList = fs.getStaff(fs.getConnDB());
-//        for(int i = 0; i < StaffList.size(); i++ ){
-//        System.out.println(StaffList.get(i).getFirstName());
-//        }
-//    }
 
    
 
