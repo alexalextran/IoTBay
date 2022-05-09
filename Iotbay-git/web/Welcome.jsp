@@ -11,6 +11,9 @@
 <%@page import="uts.isd.controller.FindUser"%>
 <%@page import="uts.isd.model.Staff"%>
 <%@page import="uts.isd.controller.InsertStaff"%>
+<%@page import="java.text.SimpleDateFormat"%> 
+<%@page import="java.util.Date"%> 
+               
 <!DOCTYPE html>
 <html>
     <head>
@@ -208,6 +211,15 @@
              if(readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password")) != null){
              Customer customer = readCustomer.Read(readCustomer.getConnDB(), request.getParameter("email"), request.getParameter("password"));
              session.setAttribute("user", customer);
+
+            
+            
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+            Date date = new Date();  
+            readCustomer.CreateAcessLog(readCustomer.getConnDB(), customer.getId(), formatter.format(date));
+     
+
+
               
              %>
               <div class="welcome__gretting">

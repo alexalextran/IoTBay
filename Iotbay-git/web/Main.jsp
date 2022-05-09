@@ -34,7 +34,7 @@
             <div class="main__account">
               <h2>Account & Details</h2>
             <a href="UpdateUser.jsp?user=customer">Update Details</a>
-            <a>Access Logs</a>
+            <a href="AcessLogs.jsp">Access Logs</a>
              <a href="DeleteUser.jsp?user=customer">Delete account</a>
             <a href="Logout.jsp">Log out</a>
            
@@ -76,12 +76,9 @@
         </div>
             
             <div class='main__products'>
-                <h2>Orders & Products</h2>
-                <a class="greenBG" href="ProductList.jsp">View Products </a>
-                <a class="greenBG" href="Product.jsp">Add Products</a>
-      
-               
-                
+                <h2>Products & Staff</h2>
+                <a class="greenBG" href="ProductMain.jsp">Products</a>
+                <a class="greenBG" href="StaffMain.jsp">Staff Administration</a>
             </div>
             
         </div>
