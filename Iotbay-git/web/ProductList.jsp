@@ -35,7 +35,7 @@
                     <td><c:out value="${Product.Type}" /></td>
                     <td><c:out value="${Product.Price}" /></td>
                     <td><c:out value="${Product.Stock}" /></td>
-                    <td>
+                    <<td>
                         <a href="/edit?id=<c:out value='${Product.Name}' />">Edit</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=<c:out value='${Product.Name}' />">Delete</a>                     
