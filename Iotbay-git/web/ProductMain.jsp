@@ -1,7 +1,7 @@
 <%-- 
     Document   : ProductMain.jsp
     Created on : 02/05/2022, 4:36:11 PM
-    Author     : Aliza faisal
+    Author     : Brendon Mai
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

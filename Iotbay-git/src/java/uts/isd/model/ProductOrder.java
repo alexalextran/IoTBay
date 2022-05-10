@@ -6,7 +6,7 @@ package uts.isd.model;
 
 /**
  *
- * @author Alex Tran
+ * @author Brendon Mai
  */
 public class ProductOrder {
     private int orderID;

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.io.Serializable;
 /**
  *
- * @author Alex Tran
+ * @author Brendon Mai
  */
 public class Product {
      private int id;

@@ -1,7 +1,7 @@
 <%-- 
     Document   : addProduct
     Created on : 14/04/2022, 7:13:14 PM
-    Author     : Brendon Main
+    Author     : Brendon Man
 --%>
 
 <%@page import="uts.isd.model.Product"%>
