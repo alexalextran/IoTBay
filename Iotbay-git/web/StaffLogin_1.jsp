@@ -26,13 +26,6 @@
           <a href="StaffRegister.jsp">Don't have an account? click here!</a>
           
         </div>
-           <div class="container">
-        <div class="row">
-            <h1>Staff Management System</h1>
-            <a href="addStaff.jsp" class="btn btn-primary">Add Staff Member</a>
-            <a href="viewStaff.jsp" class="btn btn-primary">View Staff Members</a>
-            
-        </div>
      </div>
     </body>
    

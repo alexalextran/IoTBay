@@ -99,41 +99,25 @@
             <div class="welcome__gretting">
             
             <h1>Welcome <span class="green"><%out.println(staff.getFirstName());%></span> you successfully Logged in</h1>
-        <h1>Your details are</h1>
-        </div>
-        
-        <div class='welcome__details box-shadow'>
-           <table class="welcome__table">
-     <tr>
-     <th class="green">Staff ID</th>
-    <th class="green" >Name</th>
-    <th class="green">Email</th>
-    <th class="green">Password</th>
-     <th class="green">Phone</th>
-     <th class="green">Position</th>
-  </tr>
-  <td>
-      <%out.println(staff.getid());%>
-  </td>
-  <td>
-      <%out.println(staff.getFirstName() + " " + staff.getLastName());%>
-  </td>
-  <td>
-      <%out.println(staff.getEmail());%>
-  </td>
-  <td>
-      <%out.println(staff.getPassword());%>
-  </td>
-  <td>
-      <%out.println(staff.getMobileNumber());%>
-  </td>
-  <td>
-      <%out.println(staff.getPosition());%>
-  </td>
-        </table>
      
-  <a href="Main.jsp?user=staff" class="button__link greenBG"> Proceed to the main page!</a>
-         </div>
+        </div>
+            
+             <div class='indexpage__nav box-shadow'>
+            <p>Looking to manage our <span class="green">products?</span></p>
+        <div>
+       <a href="ProductMain.jsp" class="button__link greenBG">Products</a>
+        </div>
+             <p> or looking to manage  <span class="green">staff?</span> members </p>
+         <div>
+             <a href="StaffMain.jsp" class="button__link greenBG">Staff Management</a>
+        </div>
+               <p><span class="green">finished</span> for today? </p>
+             <div>
+            <a href="Logout.jsp" class="button__link greenBG">Logout</a>
+        </div>
+       </div>
+        
+      
                 <%
                 }
             else{
@@ -163,6 +147,11 @@
             
             session.setAttribute("user", customer);
             
+            ReadCustomer readCustomer = new ReadCustomer();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+            Date date = new Date();  
+            readCustomer.CreateAcessLog(readCustomer.getConnDB(), customer.getId(), formatter.format(date));
+     
              
              %>
                

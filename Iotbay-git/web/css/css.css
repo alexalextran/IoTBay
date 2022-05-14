@@ -227,10 +227,37 @@ WELCOME PAGE
     color: var(--blue);
     font-size: 1.5rem;
    
-    padding: 1rem;
-    
-    
+    padding: 1rem;  
 }
+
+.accessLogs{
+    background-color: rgb(226,226,226);
+     position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.7rem;
+    width: 100%;
+    height: fit-content;
+}
+
+.accessLogs-table{
+    width: 100%;
+}
+
+.accessLogs-table td{
+   padding: 1.5rem 0;
+}
+
+
+.accessLogs-table tr:nth-child(odd){
+    background-color: rgb(210, 210, 210);
+    width: 100%;
+   
+}
+
 
 
 .welcome__details a{

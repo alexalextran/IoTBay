@@ -14,6 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/css.css">
         <title>JSP Page</title>
          <% 
             Customer customer = (Customer)session.getAttribute("user"); 
@@ -23,7 +24,9 @@
                 %>
     </head>
     <body>
-           <table class="table">
+        
+        <div class='accessLogs'>
+           <table class="accessLogs-table">
             <thead>
               <tr>
                   <th scope="col">Date</th>
@@ -42,6 +45,7 @@
              }
                 %> 
                  </table>
-           
+                   <a href="Main.jsp?user=customer">Head back?</a>
+           </div>
     </body>
 </html>

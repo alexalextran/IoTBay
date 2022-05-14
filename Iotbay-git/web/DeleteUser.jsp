@@ -20,6 +20,7 @@
               Customer customer = (Customer)session.getAttribute("user"); 
              DeleteUser is = new DeleteUser();
              is.Delete(is.getConnDB(), customer.getId());
+             //is.DeleteAcessLogs(is.getConnDB(), customer.getId());
              session.invalidate();
         }
             else{

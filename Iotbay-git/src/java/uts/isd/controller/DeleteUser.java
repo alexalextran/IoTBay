@@ -21,15 +21,17 @@ public class DeleteUser{
         return connDB;
     }
     
-    public static String Delete(Connection conn, int id) throws SQLException {
+    
+    public static void DeleteAcessLogs(Connection conn, int id) throws SQLException {
+    String sqlQuery = "DELETE FROM ALIZA.\"Acess_Log\" WHERE CUSTOMER_ID = "+id+" ";
+    Statement statement = conn.createStatement();
+    statement.executeUpdate(sqlQuery);
+    }
+    
+    public static void Delete(Connection conn, int id) throws SQLException {
     String sqlQuery = "DELETE FROM ALIZA.\"Users\" WHERE ID = "+id+" ";
-    try (Statement statement = conn.createStatement()) {
+      Statement statement = conn.createStatement();
       statement.executeUpdate(sqlQuery);
-      return "User deleted Succesfully"; 
-      } catch (SQLException e) {
-        return "Got an exception! " + e.getMessage(); 
-    }   
-        
   }
     
     
