@@ -25,8 +25,7 @@
        <div class="viewStaff">
            <div class="viewStaff-inner">
              <h1>All Products</h1>
-             <a href="addProduct.jsp" class="btn btn-primary">Add Product</a>
-               
+             <a href="addProduct.jsp" class="btn btn-primary">Add Product</a> 
            </div>
            <hr>
            <div class="searchFields">
@@ -88,6 +87,7 @@
                
                 <td><a href="deleteProduct.jsp?id=<%= id %>" class="btn btn-primary">Delete</a><a href="editProduct.jsp?id=<%= id %>" class="btn btn-primary">Edit</a></td>
               </tr>
+              
            
          <%
              }
@@ -95,6 +95,7 @@
         %> 
              </tbody>
         </table>
+         <a href="ProductMain.jsp" class="btn btn-primary">Go Back</a>
        </div>
 
     </body>

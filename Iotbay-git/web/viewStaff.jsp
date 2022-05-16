@@ -113,6 +113,8 @@
         %> 
              </tbody>
         </table>
+            <a href="StaffMain.jsp" class="btn btn-primary">Go Back</a>
+
        </div>
                      <%
 //                         Staff staff = new Staff(fname,lname, email, position, address, username, password, staffStatus, mobile );

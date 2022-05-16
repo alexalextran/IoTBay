@@ -22,6 +22,8 @@
                <div class="butns">
                <a href="addStaff.jsp" class="btn btn-primary">Add Staff Member</a>
                <a href="viewStaff.jsp" class="btn btn-primary">View Staff Members</a>
+                <a href="Logout.jsp" class="btn btn-primary">Logout</a>
+
                 </div>
             </div>
         </div>
