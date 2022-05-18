@@ -25,7 +25,7 @@ public class InsertCustomer{
     String sqlQuery = "INSERT INTO ALIZA.\"Users\" (NAME, EMAIL, PASSWORD, PHONE) VALUES ('"+name+"', '" +email+ "', '" +password+ "', '"+phone+"')";
     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);
-      return "Staff record added successfully"; 
+      return "Customer added successfully"; 
       } catch (SQLException e) {
         return "Got an exception! " + e.getMessage(); 
     }   
