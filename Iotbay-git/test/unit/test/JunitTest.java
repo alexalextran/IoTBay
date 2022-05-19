@@ -7,8 +7,13 @@ import junit.framework.Assert;
 import uts.isd.controller.InsertProduct;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import uts.isd.controller.DeleteUser;
+import uts.isd.controller.FindUser;
 import uts.isd.controller.InsertCustomer;
+import uts.isd.controller.ReadCustomer;
+import uts.isd.controller.Validator;
 import uts.isd.model.Calculator;
+import uts.isd.model.Customer;
 
  
 
@@ -25,7 +30,15 @@ public class JunitTest {
  
 
     private Calculator calculator;
+    
+    private ReadCustomer readCustomer;
     private InsertCustomer insertCustomer;
+    private DeleteUser deleteCustomer;
+    private Validator validator;
+    private DeleteUser deleteUser;
+    private FindUser findUser;
+  
+    
     private InsertProduct insertProduct;
 
      
@@ -35,6 +48,9 @@ public class JunitTest {
         calculator = new Calculator();
          insertCustomer = new InsertCustomer();
          insertProduct = new InsertProduct();
+         readCustomer = new ReadCustomer();
+         deleteUser = new DeleteUser();
+         findUser = new FindUser();
     }
 
  
@@ -105,6 +121,27 @@ public class JunitTest {
        Assert.assertEquals("Customer added successfully",res);
     }
     
+    @Test
+    
+    public void testReadCustomer() throws SQLException{
+        Customer res =  readCustomer.Read(readCustomer.getConnDB(), "steve@gmail.com", "vibranium");
+        Assert.assertEquals("Steve Rogers", res.getName());
+    }
+    
+    @Test
+    public void testReadCustomerWrong() throws SQLException{
+        Customer res =  readCustomer.Read(readCustomer.getConnDB(), "steve@hotmail.com", "vib");
+        assertNull(res);
+    }
+    
+    
+       @Test
+    
+    public void testDeleteCustomer() throws SQLException{
+        Customer customer = findUser.Find(findUser.getConnDB(), "Steve Rogers", "steve@gmail.com", "vibranium", "11118888");
+        String res =  deleteUser.Delete(deleteUser.getConnDB(), customer.getId());
+        Assert.assertEquals("Customer deleted successfully",res);
+    }
             
       @Test
        

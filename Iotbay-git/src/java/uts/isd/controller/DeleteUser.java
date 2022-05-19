@@ -28,10 +28,15 @@ public class DeleteUser{
     statement.executeUpdate(sqlQuery);
     }
     
-    public static void Delete(Connection conn, int id) throws SQLException {
+    public static String Delete(Connection conn, int id) throws SQLException {
     String sqlQuery = "DELETE FROM ALIZA.\"Users\" WHERE ID = "+id+" ";
-      Statement statement = conn.createStatement();
+     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);
+      return "Customer deleted successfully"; 
+      } catch (SQLException e) {
+        return "Got an exception! " + e.getMessage(); 
+    }   
+    
   }
     
     

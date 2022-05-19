@@ -9,6 +9,7 @@
 <%@page import="uts.isd.controller.InsertCustomer"%>
 <%@page import="uts.isd.controller.ReadCustomer"%>
 <%@page import="uts.isd.controller.FindUser"%>
+<%@page import="uts.isd.controller.Validator"%>
 <%@page import="uts.isd.model.Staff"%>
 <%@page import="uts.isd.controller.InsertStaff"%>
 <%@page import="java.text.SimpleDateFormat"%> 
@@ -138,6 +139,29 @@
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
+            Validator validator = new Validator();
+            
+           if(!validator.validate(name, email, password)){
+            %>
+            
+            <div  class="welcome__details box-shadow">
+                <%
+                   for(String error : validator.errors){
+                   %>
+                   
+                   <span><p class="blue"><%= error %></p></span>
+                    
+                     <%
+                    }
+                
+                 %>
+                 <a href="Register.jsp" class="button__link"> Try again?</a>
+            </div>
+            
+           <%
+           
+             
+              } else{
             
             InsertCustomer is = new InsertCustomer();
              is.Insert(is.getConnDB(), name, email, password, phone);
@@ -152,8 +176,8 @@
             Date date = new Date();  
             readCustomer.CreateAcessLog(readCustomer.getConnDB(), customer.getId(), formatter.format(date));
      
-             
              %>
+            
                
         <div class="welcome__gretting">
             
@@ -190,7 +214,7 @@
   <a href="Main.jsp?user=customer" class="button__link"> Proceed to the main page!</a>
          </div>
             
-             <% } else{
+             <% }} else{
              //LOGGIN IN A CUSTOMER
              ReadCustomer readCustomer = new ReadCustomer();
             String email = request.getParameter("email");
