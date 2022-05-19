@@ -4,12 +4,10 @@ package unit.test;
 
 import java.sql.SQLException;
 import junit.framework.Assert;
-
+import uts.isd.controller.InsertProduct;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 import uts.isd.controller.InsertCustomer;
-
 import uts.isd.model.Calculator;
 
  
@@ -28,6 +26,7 @@ public class JunitTest {
 
     private Calculator calculator;
     private InsertCustomer insertCustomer;
+    private InsertProduct insertProduct;
 
      
 
@@ -35,6 +34,7 @@ public class JunitTest {
 
         calculator = new Calculator();
          insertCustomer = new InsertCustomer();
+         insertProduct = new InsertProduct();
     }
 
  
@@ -104,5 +104,11 @@ public class JunitTest {
         String res =  insertCustomer.Insert(insertCustomer.getConnDB(), "Steve Rogers", "steve@gmail.com", "vibranium", "11118888");
        Assert.assertEquals("Customer added successfully",res);
     }
-
+    
+            
+            
+      public void testInsertProduct() throws SQLException{
+        String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", "mouse", 7, 50);
+       Assert.assertEquals("Product added successfully",res);
+    }
 }
