@@ -43,7 +43,7 @@
             <div class='main__products'>
                 <h2>Orders & Products</h2>
                 <a href="viewProductCustomer.jsp">View Products </a>
-                <a href="ADD YOUR LINK HERE">My Orders</a>
+                <a href="MyOrder.jsp">My Orders</a>
                   <a href="ADD YOUR LINK HERE">Payment Details </a>
                 
             </div>
