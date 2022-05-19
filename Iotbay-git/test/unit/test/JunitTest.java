@@ -106,9 +106,10 @@ public class JunitTest {
     }
     
             
-            
+      @Test
+       
       public void testInsertProduct() throws SQLException{
-        String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", "mouse", 7, 50);
+        String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", 7, "mouse", 50);
        Assert.assertEquals("Product added successfully",res);
     }
 }
