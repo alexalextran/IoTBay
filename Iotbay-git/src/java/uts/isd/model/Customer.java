@@ -6,7 +6,7 @@ package uts.isd.model;
 
 import java.util.ArrayList;
 import java.io.Serializable;
-//alexgayloltest
+
 /**
  *
  * @author atran
