@@ -68,6 +68,7 @@
                 <th scope="col">Total Price</th>
                 <th scope="col">Delete</th>
                 <th scope="col">Update</th>
+                <th scope="col">Submit</th>
               </tr>
             </thead>
              <tbody>
@@ -87,7 +88,9 @@
                 
                
                 <td><a href="DeletedOrder.jsp?orderid=<%= id %>" class="btn btn-primary">DELETE</a>
-                <td><a href="INSERT LINK HERE" class="btn btn-primary">UPDATE</a>
+                <td><a href="UpdateOrder.jsp" class="btn btn-primary">UPDATE</a>
+                <td><a href="SubmitOrder.jsp" class="btn btn-primary">SUBMIT</a>
+
               </tr>
               
            
