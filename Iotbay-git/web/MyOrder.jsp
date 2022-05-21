@@ -8,6 +8,7 @@
 <%@page import="uts.isd.controller.FetchOrders"%>
 <%@page import="uts.isd.model.Order"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="uts.isd.model.Customer"%>
 <%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,7 +48,8 @@
                 <% 
             String params = request.getParameter("search");
             FetchOrders fo = new FetchOrders();
-            List <Order> OrderList = fo.getOrders(fo.getConnDB(), params);
+            Customer customer = (Customer)session.getAttribute("user");
+            List <Order> OrderList = fo.getOrders(fo.getConnDB(), params, customer.getId());
             if(OrderList.size() == 0){
                 %>
              
@@ -63,8 +65,9 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Amount</th>
-                <th scope="col">Price</th>
-                <th scope="col">Action</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
               </tr>
             </thead>
              <tbody>
@@ -83,7 +86,8 @@
                 <td><%= selectedPrice %></td>
                 
                
-                <td><a href="INSERT LINK HERE" class="btn btn-primary">PLACEHOLDER</a>
+                <td><a href="DeletedOrder.jsp?orderid=<%= id %>" class="btn btn-primary">DELETE</a>
+                <td><a href="INSERT LINK HERE" class="btn btn-primary">UPDATE</a>
               </tr>
               
            
@@ -94,6 +98,8 @@
              </tbody>
         </table>
          <a href="Main.jsp?user=customer" class="btn btn-primary">Go Back</a>
+         <a href="MyOrder.jsp" class="btn btn-primary">View all orders</a>
+
        </div>
 
     </body>

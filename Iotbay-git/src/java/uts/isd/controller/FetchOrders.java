@@ -26,12 +26,14 @@ public class FetchOrders{
         return connDB;
     }
    
-    public static  List <Order> getOrders(Connection conn, String params) throws SQLException {
+    public static  List <Order> getOrders(Connection conn, String params, int customerid) throws SQLException {
     String sqlQuery;
     if(params!=null){
-        sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE NAME like '%" +params+"%' or TYPE like '%" +params+"%'"; 
+        int id = Integer.parseInt(params);
+        
+        sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+customerid+" and ID = " +id+""; 
     }else{
-        sqlQuery = "SELECT * FROM ALIZA.\"Order\"";
+        sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+customerid+"";
     }
     //String sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
     try (Statement statement = conn.createStatement()) {

@@ -9,6 +9,8 @@
 <%@page import="uts.isd.controller.FetchSelectedProduct"%>
 <%@page import="uts.isd.model.Order"%>
 <%@page import="uts.isd.model.Product"%>
+<%@page import="uts.isd.model.Customer"%>
+
 
 
 
@@ -19,11 +21,13 @@
         <title>JSP Page</title>
     </head>
     <% 
+      int amount = Integer.parseInt(request.getParameter("amount"));
       int productid = Integer. parseInt(request.getParameter("productid"));
       FetchSelectedProduct fp = new FetchSelectedProduct(); 
       Product product = fp.getProduct(fp.getConnDB(), productid);
       InsertingOrders ATO = new InsertingOrders();
-      ATO.Insert(ATO.getConnDB(), product.getname(), 1, product.getprice());
+      Customer customer = (Customer)session.getAttribute("user"); 
+      ATO.Insert(ATO.getConnDB(), product.getname(), amount, product.getprice()*amount, customer.getId());
     %>
     
     

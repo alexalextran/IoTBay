@@ -8,11 +8,11 @@ import uts.isd.model.database.DataBaseConnector;
 
 
 
-public class InsertingOrders{ 
+public class DeleteOrder{ 
     private DataBaseConnector dbConn;
     private Connection connDB; 
     
-    public InsertingOrders() throws ClassNotFoundException, SQLException {
+    public DeleteOrder() throws ClassNotFoundException, SQLException {
        this.dbConn = new DataBaseConnector();
        connDB = dbConn.connectionStart();
     }
@@ -21,18 +21,22 @@ public class InsertingOrders{
         return connDB;
     }
     
-    public static String Insert(Connection conn, String name, int amount, double price, int customerid) throws SQLException {
-    String sqlQuery = "INSERT INTO ALIZA.\"Order\" (NAME, AMOUNT ,PRICE, CUSTOMERID) VALUES ('"+name +"', "+amount+","+ price+ ", "+customerid+")";
     
-    try (Statement statement = conn.createStatement()) {
+    public static String Delete(Connection conn, int id) throws SQLException {
+    String sqlQuery = "DELETE FROM ALIZA.\"Order\" WHERE ID = "+id+" ";
+     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);
-      return "Product added to order!"; 
+      return "Customer deleted successfully"; 
       } catch (SQLException e) {
         return "Got an exception! " + e.getMessage(); 
     }   
+    
+  }
+    
+    
         
   }
 
-}
+
 
 

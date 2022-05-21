@@ -85,7 +85,14 @@
                 <td><%= selectedPrice %></td>
                 <td><%= selectedStock %></td>
                
-                <td><a href="AddedtoOrder.jsp?productid=<%= id %>" class="btn btn-primary">Add to order</a>
+                <td>
+                <form  action="AddedtoOrder.jsp?productid=<%= id %>" method="POST">
+                    <input type="text" name="amount" value="" placeholder="Type amount"/>
+                    
+                    <button class='button'>Add to order </button>
+                </form> </td>
+                
+             
               </tr>
               
            
