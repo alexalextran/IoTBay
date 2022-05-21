@@ -1,20 +1,20 @@
 <%-- 
-    Document   : ProductList
-    Created on : 14/04/2022, 7:24:21 PM
-    Author     : Brendon Mai
+    Document   : MyOrder
+    Created on : 19 May 2022, 3:54:21 pm
+    Author     : j13x002
 --%>
-<%@page import="uts.isd.controller.FetchProduct"%>
-<%@page import="uts.isd.model.Product"%>
+
+
+<%@page import="uts.isd.controller.FetchOrders"%>
+<%@page import="uts.isd.model.Order"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.*"%>
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>All Products</title>
+        <title>My Orders</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   
      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -24,7 +24,7 @@
     <body>
        <div class="viewStaff">
            <div class="viewStaff-inner">
-             <h1>All Products</h1>
+               <h1>My Order</h1>
           
            </div>
            <hr>
@@ -46,12 +46,12 @@
 <hr>           
                 <% 
             String params = request.getParameter("search");
-            FetchProduct fs = new FetchProduct();
-            List <Product> ProductList = fs.getProduct(fs.getConnDB(), params);
-            if(ProductList.size() == 0){
+            FetchOrders fo = new FetchOrders();
+            List <Order> OrderList = fo.getOrders(fo.getConnDB(), params);
+            if(OrderList.size() == 0){
                 %>
              
-                <p >No Product exists. Please add Product</p>
+                <p >No Order exists. Please add Order</p>
               
               
               <%
@@ -62,30 +62,28 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Type</th>
+                <th scope="col">Amount</th>
                 <th scope="col">Price</th>
-                <th scope="col">Stock</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
              <tbody>
-           <%
-           for(int i = 0; i < ProductList.size(); i++ ){
-            int id = ProductList.get(i).getid();
-            String selectedName = ProductList.get(i).getname();
-            String selectedType =  ProductList.get(i).gettype();
-            Double selectedPrice =  ProductList.get(i).getprice();
-            int selectedStock =  ProductList.get(i).getstock();
-            %>
+                 <%
+                     for(int i = 0; i < OrderList.size(); i++ ){
+            int id = OrderList.get(i).getID();
+            String selectedName = OrderList.get(i).getName();
+            int selectedAmount =  OrderList.get(i).getAmount();
+            Double selectedPrice =  OrderList.get(i).getPrice();
+                     %>
            
              <tr>   
                 <td><%= id %></td>
                 <td><%= selectedName %></td>
-                <td><%= selectedType %></td>
+                <td><%= selectedAmount %></td>
                 <td><%= selectedPrice %></td>
-                <td><%= selectedStock %></td>
+                
                
-                <td><a href="AddedtoOrder.jsp?productid=<%= id %>" class="btn btn-primary">Add to order</a>
+                <td><a href="INSERT LINK HERE" class="btn btn-primary">PLACEHOLDER</a>
               </tr>
               
            

@@ -7,16 +7,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.*;
-import uts.isd.model.Product;
+import uts.isd.model.Order;
 import uts.isd.model.database.DataBaseConnector;
 
 
 
-public class FetchProduct{ 
+public class FetchOrders{ 
     private DataBaseConnector dbConn;
     private Connection connDB; 
     
-    public FetchProduct() throws ClassNotFoundException, SQLException {
+    public FetchOrders() throws ClassNotFoundException, SQLException {
                
        this.dbConn = new DataBaseConnector();
        connDB = dbConn.connectionStart();
@@ -26,32 +26,32 @@ public class FetchProduct{
         return connDB;
     }
    
-    public static  List <Product> getProduct(Connection conn, String params) throws SQLException {
+    public static  List <Order> getOrders(Connection conn, String params) throws SQLException {
     String sqlQuery;
     if(params!=null){
-        sqlQuery = "SELECT * FROM ALIZA.\"Product\" WHERE NAME like '%" +params+"%' or TYPE like '%" +params+"%'"; 
+        sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE NAME like '%" +params+"%' or TYPE like '%" +params+"%'"; 
     }else{
-        sqlQuery = "SELECT * FROM ALIZA.\"Product\"";
+        sqlQuery = "SELECT * FROM ALIZA.\"Order\"";
     }
     //String sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
     try (Statement statement = conn.createStatement()) {
       ResultSet res = statement.executeQuery(sqlQuery);
-      List<Product> ProductList = new ArrayList<Product>();
+      List<Order> OrderList = new ArrayList<Order>();
       
 
          
       while (res.next()) {
           
-        Product currentProduct = new Product();
-        currentProduct.setid(res.getInt("ID"));
-        currentProduct.setname(res.getString("NAME"));
-        currentProduct.setstock(res.getInt("STOCK"));
-        currentProduct.setprice(res.getDouble("PRICE"));
-        currentProduct.settype(res.getString("TYPE"));
+        Order currentOrder = new Order();
+        currentOrder.setID(res.getInt("ID"));
+        currentOrder.setName(res.getString("NAME"));
+        currentOrder.setAmount(res.getInt("AMOUNT"));
+        currentOrder.setPrice(res.getDouble("PRICE"));
+        
        
-        ProductList.add(currentProduct);  
+        OrderList.add(currentOrder);  
       }
-        return ProductList;
+        return OrderList;
      
     } catch (SQLException e) {
       System.out.println("something went wrong");

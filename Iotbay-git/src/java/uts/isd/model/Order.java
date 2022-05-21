@@ -8,25 +8,44 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Alex Tran
+ * @author j13x002
  */
 public class Order {
-   private int orderId;
-   private int userID;
-   private boolean orderStatus;
-   private String orderDate;
-   private ArrayList<ProductOrder> productOrder;
-   
+  private int ID;
 
-    public Order(int orderId, int userID, boolean orderStatus, String orderDate) {
-        this.orderId = orderId;
-        this.userID = userID;
-        this.orderStatus = orderStatus;
-        this.orderDate = orderDate;
-        productOrder = new ArrayList<ProductOrder>();
-       
+    public int getID() {
+        return ID;
     }
-   
-   
-   
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+  private String name;
+  private int amount;
+  private double price;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
 }
