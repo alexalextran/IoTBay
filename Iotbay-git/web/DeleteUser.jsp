@@ -19,9 +19,11 @@
             if(request.getParameter("user").equals("customer")){
               Customer customer = (Customer)session.getAttribute("user"); 
              DeleteUser is = new DeleteUser();
+             is.DeletePayments(is.getConnDB(), customer.getId());
              is.DeleteOrders(is.getConnDB(), customer.getId());
              is.DeleteAcessLogs(is.getConnDB(), customer.getId());
              is.Delete(is.getConnDB(), customer.getId());
+            
             
              session.invalidate();
         }
