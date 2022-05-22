@@ -163,7 +163,7 @@ public class JunitTest {
        
     public void testInsertStaff() throws SQLException{
         String res =  insertStaff.Insert(insertStaff.getConnDB(), "Aliza", "Faisal", "alizafaixal@gmail.com", "Developer", "6 Test Rd", "alizafaisal", "123", true, "07654389");
-       Assert.assertEquals("Staff added successfully",res);
+       Assert.assertEquals("Staff record added successfully",res);
     }
     public void testDeleteStaff(int id) throws SQLException{
         String res =  deleteStaff.delete(deleteStaff.getConnDB(), id);
