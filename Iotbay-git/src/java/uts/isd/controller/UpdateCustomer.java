@@ -22,7 +22,7 @@ public class UpdateCustomer{
         return connDB;
     }
     
-        public void Update(Connection conn, String name, String email, String password, String phone, int id) throws SQLException {
+    public void Update(Connection conn, String name, String email, String password, String phone, int id) throws SQLException {
     String sqlQuery = "UPDATE ALIZA.\"Users\" SET NAME = '" +name+ "' ,EMAIL = '" +email+ "' ,PASSWORD='" +password+ "', PHONE='" +phone+ "' WHERE ID = " +id; 
     Statement statement = conn.createStatement();
    statement.executeUpdate(sqlQuery);

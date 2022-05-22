@@ -55,7 +55,8 @@ VALUES
 ('Tyrone Tyrone', 'quandale@gmail.com', 'jazz', '21837161'),
 ('adam montesin', 'adam@gmail.com', 'minecraft', '21176461'),
 ('john smith', 'john.smith@uts.com', 'user222', '21163461'),
-('Lucy Lu', 'lucy.lu@uts.com', 'lucylu', '2312413')
+('Lucy Lu', 'lucy.lu@uts.com', 'lucylu', '2312413'),
+('Steve Rogers', 'steve@gmail.com', 'vibranium', '11118888')
 ;
 
 

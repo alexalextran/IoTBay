@@ -7,10 +7,12 @@ import junit.framework.Assert;
 import uts.isd.controller.InsertProduct;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import uts.isd.controller.DeleteProduct;
 import uts.isd.controller.DeleteUser;
 import uts.isd.controller.FindUser;
 import uts.isd.controller.InsertCustomer;
 import uts.isd.controller.ReadCustomer;
+import uts.isd.controller.UpdateProduct;
 import uts.isd.controller.Validator;
 import uts.isd.model.Calculator;
 import uts.isd.model.Customer;
@@ -37,9 +39,10 @@ public class JunitTest {
     private Validator validator;
     private DeleteUser deleteUser;
     private FindUser findUser;
-  
     
+     private DeleteProduct deleteProduct;
     private InsertProduct insertProduct;
+     private UpdateProduct updateProduct;
 
      
 
@@ -47,10 +50,15 @@ public class JunitTest {
 
         calculator = new Calculator();
          insertCustomer = new InsertCustomer();
-         insertProduct = new InsertProduct();
          readCustomer = new ReadCustomer();
          deleteUser = new DeleteUser();
          findUser = new FindUser();
+         
+          insertProduct = new InsertProduct();
+          deleteProduct = new DeleteProduct();
+          updateProduct = new UpdateProduct();
+         
+         
     }
 
  
@@ -128,6 +136,10 @@ public class JunitTest {
         Assert.assertEquals("Steve Rogers", res.getName());
     }
     
+    
+    
+    
+    
     @Test
     public void testReadCustomerWrong() throws SQLException{
         Customer res =  readCustomer.Read(readCustomer.getConnDB(), "steve@hotmail.com", "vib");
@@ -142,11 +154,24 @@ public class JunitTest {
         String res =  deleteUser.Delete(deleteUser.getConnDB(), customer.getId());
         Assert.assertEquals("Customer deleted successfully",res);
     }
+    
             
       @Test
        
       public void testInsertProduct() throws SQLException{
-        String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", 7, "mouse", 50);
+       String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", 7, "mouse", 50);
        Assert.assertEquals("Product added successfully",res);
+    }
+      
+      @Test
+      public void testUpdateProduct() throws SQLException{
+           String res =  updateProduct.Update(updateProduct.getConnDB(), 21, "Frog Designed Wired Mouse", 7, 50, "mouse");
+          Assert.assertEquals("Product record updated successfully",res);
+    }
+      
+      @Test
+       public void testDeleteProduct() throws SQLException{
+       String res = deleteProduct.delete(deleteProduct.getConnDB(), 21);
+        Assert.assertEquals("Product record deleted successfully",res);
     }
 }
