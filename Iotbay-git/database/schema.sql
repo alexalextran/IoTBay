@@ -113,3 +113,12 @@ CREATE TABLE "Order"
    "CUSTOMERID" INT ,
    FOREIGN KEY (CUSTOMERID) REFERENCES "Users"(ID)
 );
+
+Insert into “Order” (NAME,AMOUNT,PRICE,CUSTOMERID)
+VALUES
+('Apple airtag',7,1050,3),
+('Kogan Full HD 1080P Webcam',3,90,3),
+('Nanoleaf Shapes - Hexagons Starter Kit (9 Panels)',3,1050,3),
+('Gigabyte GeForce RTX 3060 Gaming OC 12GB',5,3250,3),
+('Nanoleaf Shapes - Hexagons Starter Kit (9 Panels)',3,1050,2),
+
