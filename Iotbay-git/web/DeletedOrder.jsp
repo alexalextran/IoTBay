@@ -12,12 +12,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link rel="stylesheet" href="css/css.css">
     </head>
     
     <% 
         DeleteOrder DO = new DeleteOrder();
         int orderid = Integer. parseInt(request.getParameter("orderid"));
+        DO.DeletePayment(DO.getConnDB(), orderid);
         DO.Delete(DO.getConnDB(), orderid);
+      
 
     %>
     
