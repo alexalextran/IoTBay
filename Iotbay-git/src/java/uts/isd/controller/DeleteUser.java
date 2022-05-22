@@ -27,6 +27,11 @@ public class DeleteUser{
     Statement statement = conn.createStatement();
     statement.executeUpdate(sqlQuery);
     }
+    public static void DeleteOrders(Connection conn, int id) throws SQLException {
+    String sqlQuery = "DELETE FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+id+" ";
+    Statement statement = conn.createStatement();
+    statement.executeUpdate(sqlQuery);
+    }
     
     public static String Delete(Connection conn, int id) throws SQLException {
     String sqlQuery = "DELETE FROM ALIZA.\"Users\" WHERE ID = "+id+" ";

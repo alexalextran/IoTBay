@@ -19,7 +19,7 @@
           <form class="enterform__input" action="Welcome.jsp?user=stafflogin" method="POST">
             <input class="greenBorder" type="text" name="email" value="" placeholder="Email"/>
             <input class="greenBorder" type="text" name="position" value="" placeholder="Position"/>
-            <input  class="greenBorder" type="text" name="password" value="" placeholder="Password"/>
+            <input  class="greenBorder" type="password" name="password" value="" placeholder="Password"/>
             <button class='button greenBG'>Login </button>
         </form>
           
