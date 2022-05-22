@@ -63,6 +63,7 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">Date</th>
                 <th scope="col">Name</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Total Price</th>
@@ -82,6 +83,7 @@
            
              <tr>   
                 <td><%= id %></td>
+                <td>Date</td>
                 <td><%= selectedName %></td>
                 <td><%= selectedAmount %></td>
                 <td><%= selectedPrice %></td>
