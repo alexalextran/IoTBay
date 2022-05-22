@@ -92,7 +92,7 @@
                
                 <td><a href="DeletedOrder.jsp?orderid=<%= id %>" class="btn btn-primary">DELETE</a>
                 <td><a href="UpdateOrder.jsp?orderid=<%= id %>" class="btn btn-primary">UPDATE</a>
-                <td><a href="SubmitOrder.jsp" class="btn btn-primary">SUBMIT</a>
+                <td><a href="addPaymentMethod.jsp?orderid=<%= id %>" class="btn btn-primary">SUBMIT</a>
 
               </tr>
               

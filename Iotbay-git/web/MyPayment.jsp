@@ -37,7 +37,7 @@
                  <td></td>
                  <td></td>
                  <td></td>
-                <td><a class="btn btn-primary">DELETE</a></td>
+                <td><a href="deletePayment.jsp" class="btn btn-primary">DELETE</a></td>
                 <td><a href="updatePaymentMethod.jsp" class="btn btn-primary">UPDATE</a></td>
              </tbody>
         </table>
