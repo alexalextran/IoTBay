@@ -143,3 +143,17 @@ CREATE TABLE "Order"
 );
 
 
+CREATE TABLE "Payment"
+(   
+   "ID" INT not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),  
+   "CARDNO" VARCHAR(16)  ,    
+   "NAMEONCARD" VARCHAR(80)  ,
+   "MMYY" VARCHAR(5),
+   "SECCODE" VARCHAR(3) ,
+   "ORDERID" INT ,
+   FOREIGN KEY (ORDERID) REFERENCES "Order"(ID)
+);
+
+
