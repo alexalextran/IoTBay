@@ -8,11 +8,11 @@ import uts.isd.model.database.DataBaseConnector;
 
 
 
-public class InsertPayment{ 
+public class UpdatePayment{ 
     private DataBaseConnector dbConn;
     private Connection connDB; 
     
-    public InsertPayment() throws ClassNotFoundException, SQLException {
+    public UpdatePayment() throws ClassNotFoundException, SQLException {
        this.dbConn = new DataBaseConnector();
        connDB = dbConn.connectionStart();
     }
@@ -21,11 +21,11 @@ public class InsertPayment{
         return connDB;
     }
     
-    public static String Insert(Connection conn, String cardno, String name, String expdate, String seccode, int OrderID, int CustomerID) throws SQLException {
-    String sqlQuery = "INSERT INTO ALIZA.\"Payment\" (CARDNO, NAMEONCARD, MMYY, SECCODE, ORDERID, CUSTOMERID) VALUES ('"+cardno+"', '" +name+ "', '" +expdate+ "', '"+seccode+"', "+OrderID+", "+CustomerID+")";
+    public static String Update(Connection conn, String cardno, String name, String expdate, String seccode, int id) throws SQLException {
+    String sqlQuery = "UPDATE ALIZA.\"Payment\" SET CARDNO ='"+cardno+"', NAMEONCARD = '" +name+ "', MMYY = '"+ expdate+ "', SECCODE = '"+seccode+"' WHERE ID =" +id+"";
     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);
-      return "Payment added successfully"; 
+      return "Product record updated successfully";
       } catch (SQLException e) {
         return "Got an exception! " + e.getMessage(); 
     }   

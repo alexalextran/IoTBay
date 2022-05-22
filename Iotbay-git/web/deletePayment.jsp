@@ -16,7 +16,7 @@
     
     <% 
         DeletePayment payment = new DeletePayment();
-        payment.Delete(payment.getConnDB(), 1);
+        payment.Delete(payment.getConnDB(), Integer.parseInt(request.getParameter("paymentid")));
 
     %>
     

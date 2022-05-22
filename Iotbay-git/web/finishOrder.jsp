@@ -17,5 +17,6 @@
     </head>
     <body>
         <h1>Order was successful!</h1>
+        <a href="Main.jsp?user=customer" class="btn btn-primary">Back</a>
     </body>
 </html>

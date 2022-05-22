@@ -1,150 +1,49 @@
 <%-- 
-    Document   : updatePaymentMethod
-    Created on : 22 May 2022, 4:41:32 pm
+    Document   : addPaymentMethod
+    Created on : 22 May 2022, 4:07:57 pm
     Author     : vietd
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.controller.UpdatePayment"%>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Payment Method</title>
         <link rel="stylesheet" href="css/css.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+       <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <% 
-            //update customer
-            if(request.getParameter("user").equals("customer")){
-            
-            Customer customer = (Customer)session.getAttribute("user"); 
-            //if successful update
-            if(request.getParameter("email") != null || request.getParameter("password") != null || request.getParameter("name") != null || request.getParameter("phone") != null){
-           
-            UpdateCustomer updateCustomer = new UpdateCustomer();
-            updateCustomer.Update(updateCustomer.getConnDB(), request.getParameter("name"), request.getParameter("email"), request.getParameter("password"), request.getParameter("phone"), customer.getId());
-       
-            
-            customer.setName(request.getParameter("name"));
-            customer.setEmail(request.getParameter("email"));
-            customer.setPassword(request.getParameter("password"));
-            customer.setPhone(request.getParameter("phone"));
-            %>
-                <div class="details__changed">
-                   <h1>Your details have been <span>successfully</span> changed</h1> 
-                  </div> 
-           
-           
-          <%
-            // no changes
-        } 
-            %>
-              <div class="enterform box-shadow">
-                <form class="enterform__input" method="POST" action="UpdateUser.jsp?user=customer">
-              <h3>Name</h3>
-                  <input type="text" name="name" value="<% out.println(customer.getName()); %>" />
-              <h3>Email</h3>
-            <input  type="text" name="email" value="<% out.println(customer.getEmail()); %>" />
-              <h3>Password</h3>
-            <input  type="text" name="password" value="<% out.println(customer.getPassword()); %>"/>
-              <h3>Phone</h3>
-            <input type="text" name="phone" value="<% out.println(customer.getPhone()); %>"/>
-            <button class="button__link">Submit</button>
-        </form>
-            
-            <a href="Main.jsp?user=customer">Back to welcome page</a>
-            </div>
-          <%
-          
-        } else{
-            //staff update
+    
+    <% 
+  int paymentid = Integer.valueOf(request.getParameter("paymentid"));
 
-            Staff staff = (Staff)session.getAttribute("user"); 
-
-            String updatedfname = request.getParameter("updatedfname");
-            String updatedlname = request.getParameter("updatedlname");
-            String updatedaddress = request.getParameter("updatedaddress");
-            String updatedemail = request.getParameter("updatedemail");
-            String updatedusername = request.getParameter("updatedusername");
-            String updatedpassword = request.getParameter("updatedpassword");
-            String updatedposition = request.getParameter("updatedposition");
-            String updatedmobile = request.getParameter("updatedmobile");
-           boolean updatedStatus = true;
-
-            if(updatedfname != null || updatedlname != null || updatedaddress != null || updatedemail != null || updatedusername != null || updatedpassword != null || updatedposition != null || updatedmobile != null){
-            //if changes
-           UpdateStaff us = new UpdateStaff();
-           us.Update(us.getConnDB(), staff.getid(), updatedfname, updatedlname, updatedemail, updatedposition, updatedaddress, updatedusername, updatedpassword, updatedStatus, updatedmobile);
-        
-            staff.setFirstName(request.getParameter("updatedfname"));
-            staff.setLastName(request.getParameter("updatedlname"));
-            staff.setAddress(request.getParameter("updatedaddress"));
-            staff.setEmail(request.getParameter("updatedemail"));
-            staff.setUsername(request.getParameter("updatedusername"));
-            staff.setPassword(request.getParameter("updatedpassword"));
-            staff.setPosition(request.getParameter("updatedposition"));
-           staff.setMobileNumber(request.getParameter("updatedmobile"));
-            //staff.setStatus(request.getParameter("updatedStatus"));
-              %>
-              
-               <div class="details__changed">
-                   <h1>Your details have been <span>successfully</span> changed</h1> 
-                  </div> 
-            <%
-               } 
-                // no changes            
-            %>
-                     <div class="enterform box-shadow staffform">
-                  <br>
-                  <br>
-                  <br>
-                  
-                <form class="enterform__input" method="POST" action="UpdateUser.jsp?user=staff">
-                    
-                  <h3>First Name</h3>
-                <input class="greenBorder" type="text" name="updatedfname" value="<% out.println(staff.getFirstName()); %>">
-           
-            
-                <h3>Last Name</h3>
-                <input class="greenBorder" type="text" name="updatedlname" value="<% out.println(staff.getLastName()); %>">
-           
-            
-                <h3>Home Address</h3>
-                <input class="greenBorder" type="text"name="updatedaddress" value="<%  out.println(staff.getAddress()); %>">
-            
-            
-              <h3>Email address</h3>
-              <input class="greenBorder" type="email" name="updatedemail" value="<% out.println(staff.getEmail()); %>">
-            
-            
-                <h3>Username</h3>
-                <input class="greenBorder" type="text" name="updatedusername" value="<%  out.println(staff.getUsername()); %>"> 
-            
-            
-              <h3>Password</h3>
-              <input class="greenBorder" type="password" name="updatedpassword" value="<% out.println(staff.getPassword()); %>">
-            
-            
-                <h3>Position</h3>
-                <input class="greenBorder" type="text" name="updatedposition" value="<% out.println(staff.getPosition()); %>">
-            
-            
-                <h3>Mobile Number</h3>
-                <input class="greenBorder" type="text" name="updatedmobile" value="<% out.println(staff.getMobileNumber()); %>">
-             
-                <h3>Staff Status</h3>
-                <input class="greenBorder" type="text" name="updatedstaffStatus" value="true">
-            
-         <button class="button__link greenBG">Submit</button>
-        </form>
-             
-              <a href="Main.jsp?user=staff">Back to Main page</a>
-             </div>
-            
-            <%
-                
+  if(request.getParameter("cardno") != null && request.getParameter("name") != null && request.getParameter("expdate") != null && request.getParameter("seccode") != null){
+        UpdatePayment payment = new UpdatePayment();
+        payment.Update(payment.getConnDB(), request.getParameter("cardno"), request.getParameter("name"), request.getParameter("expdate"), request.getParameter("seccode"), paymentid);
             }
-        %>
+    %>
+    <body>
+        
+<div class="viewStaff">
+           <div class="viewStaff-inner">
+               <h1>Update Current Payment Details</h1>
+          
+           </div>         
+
+    <form class="enterform__input" action="updatePaymentMethod.jsp?paymentid=<%=  paymentid %>" method="POST">
+            <input type="text" name="cardno" value="" placeholder="Card number"/>
+            <input type="text" name="name" value="" placeholder="Name on card"/>
+            <input type="text" name="expdate" value="" placeholder="Expiration date (MM / YY)"/>
+            <input type="text" name="seccode" value="" placeholder="Security code"/>
+            <button class='button'>Save</button>
+            <a href="Main.jsp?user=customer">Back to Main page</a>
+        </form>
       
     </body>
 </html>

@@ -26,54 +26,29 @@ public class FetchPayment{
         return connDB;
     }
    
-    public static  List <Payment> getPayments(Connection conn, String params, int customerid) throws SQLException {
-    String sqlQuery;
-    if(params!=null){
-        if(!params.contains("/")){
-            int id = Integer.parseInt(params);
-            sqlQuery = "SELECT * FROM ALIZA.\"Payment\" WHERE CUSTOMERID = "+customerid+" and ID = " +id+"  " ; 
-        }
-        
-        else{
-            sqlQuery = "SELECT * FROM ALIZA.\"Payment\" WHERE CUSTOMERID = "+customerid+" and DATE = '"+params+"' " ; 
-
-        }
-        
-        
-    }else{
-        sqlQuery = "SELECT * FROM ALIZA.\"Payment\" WHERE CUSTOMERID = "+customerid+"";
-    }
-    //String sqlQuery = "SELECT * FROM ALIZA.\"Staff\"";
-    try (Statement statement = conn.createStatement()) {
-      ResultSet res = statement.executeQuery(sqlQuery);
-      List<Payment> PaymentList = new ArrayList<Payment>();
-      
-
-         
-      while (res.next()) {
-          
-        Payment currentPayment = new Payment();
-        currentPayment.setID(res.getInt("ID"));
-        currentPayment.setDate(res.getString("DATE"));
-        currentPayment.setName(res.getString("NAME"));
-        currentPayment.setAmount(res.getInt("AMOUNT"));
-        currentPayment.setPrice(res.getDouble("PRICE"));
-        
-       
-        PaymentList.add(currentPayment);  
-      }
-        return PaymentList;
      
-    } catch (SQLException e) {
-      System.out.println("something went wrong");
-    }
-        return null;
-       
-        
-        
+         public static  ArrayList<Payment> getPayments(Connection conn, int id) throws SQLException {
+    
+         String sqlQuery = "SELECT * FROM ALIZA.\"Payment\" WHERE CUSTOMERID = "+id+" "; 
+ 
+        Statement statement = conn.createStatement();
+        ResultSet res = statement.executeQuery(sqlQuery);
+        ArrayList<Payment> paymentList = new ArrayList <Payment>();
+      
+      while (res.next()) {
+        int paymentID = res.getInt(1);
+        String cardno = res.getString(2);
+        String name = res.getString(3);
+        String expdate = res.getString(4);
+        String seccode = res.getString(5);
+        int orderID = res.getInt(6);
+        int customerID = res.getInt(7);
+        Payment payment1 = new Payment(paymentID, cardno, name, expdate, seccode, orderID, customerID);
+        paymentList.add(payment1);  
+      }
+        return paymentList;
+      
   }
-
-   
 
 }
 

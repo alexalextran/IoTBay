@@ -11,50 +11,78 @@ import java.util.ArrayList;
  * @author vietd
  */
 public class Payment {
-  private int ID;
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-  private String date;
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
+  private int PaymentID;
   private String name;
-  private int amount;
-  private double price;
+  private String card;
+  private String expdate;
+  private int CustomerID;
 
-    public void setName(String name) {
-        this.name = name;
+    public int getCustomerID() {
+        return CustomerID;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setCustomerID(int CustomerID) {
+        this.CustomerID = CustomerID;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public int getPaymentID() {
+        return PaymentID;
+    }
+
+    public void setPaymentID(int PaymentID) {
+        this.PaymentID = PaymentID;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getAmount() {
-        return amount;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getPrice() {
-        return price;
+    public String getCard() {
+        return card;
+    }
+
+    public void setCard(String card) {
+        this.card = card;
+    }
+
+    public String getExpdate() {
+        return expdate;
+    }
+
+    public void setExpdate(String expdate) {
+        this.expdate = expdate;
+    }
+
+    public String getSeccode() {
+        return seccode;
+    }
+
+    public void setSeccode(String seccode) {
+        this.seccode = seccode;
+    }
+
+    public int getOrderID() {
+        return OrderID;
+    }
+
+    public void setOrderID(int OrderID) {
+        this.OrderID = OrderID;
+    }
+  private String seccode;
+  private int OrderID;
+
+    public Payment(int PaymentID, String card, String name, String expdate, String seccode, int OrderID, int CustomerID) {
+        this.PaymentID = PaymentID;
+        this.name = name;
+        this.card = card;
+        this.expdate = expdate;
+        this.CustomerID = CustomerID;
+        this.seccode = seccode;
+        this.OrderID = OrderID;
     }
 
 }
