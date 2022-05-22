@@ -3,19 +3,23 @@ package unit.test;
  
 
 import java.sql.SQLException;
+import java.util.List;
 import junit.framework.Assert;
 import uts.isd.controller.InsertProduct;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import uts.isd.controller.DeleteProduct;
+import uts.isd.controller.DeleteStaff;
 import uts.isd.controller.DeleteUser;
+import uts.isd.controller.FetchStaff;
 import uts.isd.controller.FindUser;
 import uts.isd.controller.InsertCustomer;
+import uts.isd.controller.InsertStaff;
 import uts.isd.controller.ReadCustomer;
-import uts.isd.controller.UpdateProduct;
+import uts.isd.controller.UpdateStaff;
 import uts.isd.controller.Validator;
 import uts.isd.model.Calculator;
 import uts.isd.model.Customer;
+import uts.isd.model.Staff;
 
  
 
@@ -40,25 +44,23 @@ public class JunitTest {
     private DeleteUser deleteUser;
     private FindUser findUser;
     
-     private DeleteProduct deleteProduct;
     private InsertProduct insertProduct;
-     private UpdateProduct updateProduct;
-
-     
-
+    private InsertStaff insertStaff;
+    private DeleteStaff deleteStaff;
+    private FetchStaff fetchStaff;
+    private UpdateStaff updateStaff;
+    
     public JunitTest() throws ClassNotFoundException, SQLException {
 
         calculator = new Calculator();
          insertCustomer = new InsertCustomer();
+         insertProduct = new InsertProduct();
          readCustomer = new ReadCustomer();
          deleteUser = new DeleteUser();
          findUser = new FindUser();
-         
-          insertProduct = new InsertProduct();
-          deleteProduct = new DeleteProduct();
-          updateProduct = new UpdateProduct();
-         
-         
+         insertStaff = new InsertStaff();
+         fetchStaff = new FetchStaff();
+         updateStaff = new UpdateStaff();
     }
 
  
@@ -136,10 +138,6 @@ public class JunitTest {
         Assert.assertEquals("Steve Rogers", res.getName());
     }
     
-    
-    
-    
-    
     @Test
     public void testReadCustomerWrong() throws SQLException{
         Customer res =  readCustomer.Read(readCustomer.getConnDB(), "steve@hotmail.com", "vib");
@@ -154,24 +152,30 @@ public class JunitTest {
         String res =  deleteUser.Delete(deleteUser.getConnDB(), customer.getId());
         Assert.assertEquals("Customer deleted successfully",res);
     }
-    
             
       @Test
        
       public void testInsertProduct() throws SQLException{
-       String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", 7, "mouse", 50);
+        String res =  insertProduct.Insert(insertProduct.getConnDB(), "Frog Designed Wired Mouse", 7, "mouse", 50);
        Assert.assertEquals("Product added successfully",res);
     }
-      
-      @Test
-      public void testUpdateProduct() throws SQLException{
-           String res =  updateProduct.Update(updateProduct.getConnDB(), 21, "Frog Designed Wired Mouse", 7, 50, "mouse");
-          Assert.assertEquals("Product record updated successfully",res);
+         @Test
+       
+    public void testInsertStaff() throws SQLException{
+        String res =  insertStaff.Insert(insertStaff.getConnDB(), "Aliza", "Faisal", "alizafaixal@gmail.com", "Developer", "6 Test Rd", "alizafaisal", "123", true, "07654389");
+       Assert.assertEquals("Staff added successfully",res);
+    }
+    public void testDeleteStaff(int id) throws SQLException{
+        String res =  deleteStaff.delete(deleteStaff.getConnDB(), id);
+       Assert.assertEquals("Staff deleted successfully",res);
+    }
+      public void testfindStaff(String params) throws SQLException{
+        List <Staff> res =  fetchStaff.getStaff(fetchStaff.getConnDB(), params);
+      assertNull(res);
+    }
+    public void testUpdateStaff(int id) throws SQLException{
+        String res =  updateStaff.Update(updateStaff.getConnDB(), id, "Aleeza", "Faisall", "alizafaisal@gmail.com", " Web Developer", "6 Test Rd, Plumpton", "alizafaixal", "1234", true, "07654389");
+       Assert.assertEquals("Staff record updated successfully",res);
     }
       
-      @Test
-       public void testDeleteProduct() throws SQLException{
-       String res = deleteProduct.delete(deleteProduct.getConnDB(), 21);
-        Assert.assertEquals("Product record deleted successfully",res);
-    }
 }
