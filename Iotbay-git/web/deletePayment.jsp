@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link rel="stylesheet" href="css/css.css">
     </head>
     
     <% 
@@ -21,8 +22,10 @@
     %>
     
     <body>
+        <div class="welcome__details box-shadow">
         <h1>Order has been deleted!</h1>
-        <a href="MyOrder.jsp" class="btn btn-primary">Go back to My Orders</a>
+        <a href="MyOrder.jsp" class="button_link">Go back to My Orders</a>
+        </div>
     </body>
     
     

@@ -64,7 +64,6 @@ CREATE TABLE "Users"
 );
 INSERT INTO "Users" (NAME,EMAIL,PASSWORD,PHONE)
 VALUES
-('Blank', '', '', '61123456789'),
 ('Jason Vu', 'jason.vu@gmail.com', 'medusa', '61123456789'),
 ('Alex Tran', 'alex.tran@gmail.com', 'bruh', '61000000000'),
 ('Joshua Nguyen', 'joshua.nguyen@gmail.com', 'ascenttables', '61999888777'),
