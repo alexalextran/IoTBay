@@ -7,6 +7,9 @@
  * Created: 22 May 2022
  */
 
+CREATE DATABASE IOTBAY;
+
+USE DATABASE IOTBAY;
 CREATE TABLE "Staff"
 
 (   
@@ -35,7 +38,17 @@ VALUES
 ('John', 'johnson', '6 Test Rd, Plumpton', 'john.johnson@gmail.com','jonny', 'rabipants', 'Delevelop', '6231123123', true),
 ('Bill', 'Gates', '6 Test Rd, Plumpton', 'bill.gates@gmail.com','bill', 'rabipants', 'Delevelop', '623309123', true),
 ('Johnny', 'Sins', '6 Test Rd, Plumpton', 'Jonny.sins@gmail.com','hub', 'rabipants', 'Delevelop', '623113123', true),
-('Alex', 'Steve', '6 Test Rd, Plumpton', 'alex.steve@gmail.com','alex', 'rabipants', 'Delevelop' ,'613613123', true)
+('Alex', 'Steve', '6 Test Rd, Plumpton', 'alex.steve@gmail.com','alex', 'rabipants', 'Delevelop' ,'613613123', true),
+('Salman', 'Zaid', '6 Test Rd, Plumpton', 'sa.zaid@gmail.com','salmanZaid', 'medusa', 'Web Delevelop', '61123456789', true),
+('Sam', 'Tran', '6 Test Rd, Plumpton', 'Sam.tran@gmail.com','SamTran', 'bruh', 'IT Admin', '61000000000', true),
+('Sofia', 'Damn', '6 Test Rd, Plumpton', 'Sofia.Damn@gmail.com','sofiaDamn', 'ascenttables', 'Delevelop', '61999888777', true),
+('Aliza', 'faixal', '6 Test Rd, Plumpton', 'aliza.faixal@gmail.com','Alizafaixal', 'php', 'Project Manager', '61123123123', true),
+('Grace', 'handosn', '6 Test Rd, Plumpton', 'Grace.handosn@gmail.com','graceHandson', 'rabipants', 'Front-end engineer', '61222666888', true),
+('frankie', 'bu', '6 Test Rd, Plumpton', 'frankie.bu@gmail.com','frankie', 'rabipants', 'Back-end engineer', '6233123123', true),
+('mark', 'markson', '6 Test Rd, Plumpton', 'mark.markson@gmail.com','marky', 'rabipants', 'Full stack engineer', '6231123123', true),
+('jibran', 'khairi', '6 Test Rd, Plumpton', 'jibran.khairi@gmail.com','jibran', 'rabipants', 'HR manager', '623309123', true),
+('Fatima', 'Sins', '6 Test Rd, Plumpton', 'fatima.sins@gmail.com','hub', 'rabipants', 'Assitant', '623113123', true),
+('Alex', 'Steve', '6 Test Rd, Plumpton', 'alex.steve@gmail.com','alex', 'rabipants', 'Desk help' ,'613613123', true)
 ;
 
 CREATE TABLE "Users"
