@@ -22,7 +22,7 @@
         
         <input type="text" name="updateamount" value="" placeholder="Update amount"/>
         
-        <a href="INSERT LINK HERE" class="btn btn-primary">Submit</a>
+        <a href="OrderUpdated.jsp" class="btn btn-primary">Submit</a>
         <a href="MyOrder.jsp" class="btn btn-primary">Cancel</a>
 
 
