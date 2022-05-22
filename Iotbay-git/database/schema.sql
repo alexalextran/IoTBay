@@ -54,7 +54,7 @@ VALUES
 ('Kevin Nguyen', 'kevin@gmail.com', 'dragonsleve', '23187461'),
 ('Tyrone Tyrone', 'quandale@gmail.com', 'jazz', '21837161'),
 ('adam montesin', 'adam@gmail.com', 'minecraft', '21176461'),
-('john smith', 'john.smith@uts.com', 'user222', '21163461')
+('john smith', 'john.smith@uts.com', 'user222', '21163461'),
 ('Lucy Lu', 'lucy.lu@uts.com', 'lucylu', '2312413')
 ;
 
