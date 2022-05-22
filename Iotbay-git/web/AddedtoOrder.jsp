@@ -22,6 +22,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/css.css">
     </head>
     <% 
         
@@ -43,17 +44,21 @@
     
     
     <body>
-        <h1>Your order has been added to cart!</h1>
- <a href="MyOrder.jsp">Go Back</a>  
+        <div class="welcome__details box-shadow"> 
+           <h1>Your order has been added to cart!</h1>
+             <a class="button__link" href="MyOrder.jsp">Go Back</a> 
+        </div>
+        
     </body>
     <%
     }
 else{
 %>
-  
+   <div class="welcome__details box-shadow"> 
 <h1>Insufficient stock!</h1>
 
-<a href="MyOrder.jsp" class="btn btn-primary">Go back</a>
+<a href="MyOrder.jsp" class="button__link">Go back</a>
+   </div>
 <%
 }
 %>

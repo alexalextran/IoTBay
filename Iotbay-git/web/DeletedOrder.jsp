@@ -22,8 +22,10 @@
     %>
     
     <body>
+        <div class="welcome__details box-shadow">
         <h1>Order has been deleted!</h1>
-        <a href="MyOrder.jsp" class="btn btn-primary">Go back to My Orders</a>
+        <a href="MyOrder.jsp" class="button__link">Go back to My Orders</a>
+        </div>
     </body>
     
     

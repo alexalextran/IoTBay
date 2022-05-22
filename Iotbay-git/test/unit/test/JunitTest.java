@@ -17,7 +17,7 @@ import uts.isd.controller.InsertStaff;
 import uts.isd.controller.ReadCustomer;
 import uts.isd.controller.UpdateStaff;
 import uts.isd.controller.Validator;
-import uts.isd.model.Calculator;
+
 import uts.isd.model.Customer;
 import uts.isd.model.Staff;
 
@@ -35,7 +35,7 @@ public class JunitTest {
 
  
 
-    private Calculator calculator;
+   
     
     private ReadCustomer readCustomer;
     private InsertCustomer insertCustomer;
@@ -52,7 +52,7 @@ public class JunitTest {
     
     public JunitTest() throws ClassNotFoundException, SQLException {
 
-        calculator = new Calculator();
+       
          insertCustomer = new InsertCustomer();
          insertProduct = new InsertProduct();
          readCustomer = new ReadCustomer();
@@ -62,67 +62,6 @@ public class JunitTest {
          fetchStaff = new FetchStaff();
          updateStaff = new UpdateStaff();
     }
-
- 
-
-    @Test
-
-    public void evaluatesExpression() {       
-
-        int sum = calculator.evaluate("1+2+3");
-
-        assertEquals(6, sum);
-
-    }
-
-     
-
-    @Test
-
-    public void testAdd(){
-
-        int res = calculator.add(2,5);
-
-        assertEquals(7,res);
-
-    }
-
-     
-
-    @Test
-
-    public void testSub(){
-
-        int res = calculator.subtract(5,3);
-
-        assertEquals(2,res);
-
-    }
-
-     
-
-    @Test
-
-    public void testMul(){
-
-        int res = calculator.mul(2,4);
-
-        assertEquals(8,res);
-
-    }
-
-     
-
-    @Test
-
-    public void testPow(){
-
-        double res = calculator.power(2, 3);
-
-        Assert.assertEquals(8.00,res,0.001);
-
-    }
-    
     
     @Test
     

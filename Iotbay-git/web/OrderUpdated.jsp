@@ -14,6 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link rel="stylesheet" href="css/css.css">
     </head>
     
     <% 
@@ -28,9 +29,11 @@
         %>
     
     <body>
-       
-        <h1>Your order has been updated!</h1>
-        <a href="MyOrder.jsp" class="btn btn-primary">Go back</a>
+        <div class="welcome__details box-shadow">
+              <h1>Your order has been updated!</h1>
+        <a href="MyOrder.jsp" class="button__link">Go back</a> 
+        </div>
+     
 
     </body>
 </html>
