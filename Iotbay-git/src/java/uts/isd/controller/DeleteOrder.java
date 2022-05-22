@@ -32,6 +32,16 @@ public class DeleteOrder{
     }   
     
   }
+    public static String DeletePayment(Connection conn, int orderid) throws SQLException {
+    String sqlQuery = "DELETE FROM ALIZA.\"Payment\" WHERE ORDERID = "+orderid+" ";
+     try (Statement statement = conn.createStatement()) {
+      statement.executeUpdate(sqlQuery);
+      return "Customer deleted successfully"; 
+      } catch (SQLException e) {
+        return "Got an exception! " + e.getMessage(); 
+    }   
+    
+  }
     
     
         

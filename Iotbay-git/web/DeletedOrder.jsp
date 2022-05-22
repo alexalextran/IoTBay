@@ -18,7 +18,9 @@
     <% 
         DeleteOrder DO = new DeleteOrder();
         int orderid = Integer. parseInt(request.getParameter("orderid"));
+        DO.DeletePayment(DO.getConnDB(), orderid);
         DO.Delete(DO.getConnDB(), orderid);
+      
 
     %>
     
