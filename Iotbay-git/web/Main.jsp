@@ -44,7 +44,7 @@
                 <h2>Orders & Products</h2>
                 <a href="viewProductCustomer.jsp">View Products </a>
                 <a href="MyOrder.jsp">My Orders</a>
-                  <a href="ADD YOUR LINK HERE">Payment Details </a>
+                  <a href="MyPayment.jsp">Payment Details </a>
                 
             </div>
             

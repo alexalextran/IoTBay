@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <a href="INSERT TEXT HERE" class="btn btn-primary">Go to payment</a>
+        <a href="choosePayment.jsp" class="btn btn-primary">Go to payment</a>
         <a href="MyOrder.jsp" class="btn btn-primary">Cancel</a>
 
     </body>
