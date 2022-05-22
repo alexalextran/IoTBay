@@ -24,6 +24,20 @@ CREATE TABLE "Staff"
    "STATUS" BOOLEAN  
 );
 
+INSERT INTO "Staff" (FNAME, LNAME, ADDRESS,EMAIL, USERNAME, PASSWORD, POSITION,  MOBILE,  STATUS)
+VALUES
+('Jason', 'Vu', '6 Test Rd, Plumpton' 'jason.vu@gmail.com','JasonVu', 'medusa', 'Delevelop' '61123456789', true),
+('Alex', 'Tran', '6 Test Rd, Plumpton' 'alex.tran@gmail.com','AlexTran', 'bruh', 'Delevelop' '61000000000', true),
+('Joshua', 'Nguyen', '6 Test Rd, Plumpton' 'joshua.nguyen@gmail.com','JohsuaNguyan', 'ascenttables', 'Delevelop' '61999888777', true),
+('Aliza', 'faixal', '6 Test Rd, Plumpton' 'aliza.faixal@gmail.com','Alizafaixal', 'php', 'Delevelop' '61123123123', true),
+('Brendon', 'Mai', '6 Test Rd, Plumpton' 'brendon.mai@gmail.com','AlexTran', 'rabipants', 'Delevelop' '61222666888', true),
+('Steve', 'Jobs', '6 Test Rd, Plumpton' 'steve.jobs@gmail.com','steve', 'rabipants', 'Delevelop' '6233123123', true),
+('John', 'johnson', '6 Test Rd, Plumpton' 'john.johnson@gmail.com','jonny', 'rabipants', 'Delevelop' '6231123123', true),
+('Bill', 'Gates', '6 Test Rd, Plumpton' 'bill.gates@gmail.com','bill', 'rabipants', 'Delevelop' '623309123', true),
+('Johnny', 'Sins', '6 Test Rd, Plumpton' 'Jonny.sins@gmail.com','hub', 'rabipants', 'Delevelop' '623113123', true),
+('Alex', 'Steve', '6 Test Rd, Plumpton' 'alex.steve@gmail.com','alex', 'rabipants', 'Delevelop' '613613123', true)
+;
+
 CREATE TABLE "Users"
 (   
    "ID" INT not null primary key
