@@ -20,9 +20,17 @@
         
         <h1>Update your order here!</h1>
         
-        <input type="text" name="updateamount" value="" placeholder="Update amount"/>
+        <%
+            int orderid = Integer.parseInt(request.getParameter("orderid"));
+
+            %>
         
-        <a href="OrderUpdated.jsp" class="btn btn-primary">Submit</a>
+        <form action="OrderUpdated.jsp?orderid=<%= orderid %>" method="POST">
+        <input type="text" name="updateamount" value="" placeholder="Update amount"/>
+         <button class="btn btn-primary">Submit</button>
+        </form>
+        
+       
         <a href="MyOrder.jsp" class="btn btn-primary">Cancel</a>
 
 
