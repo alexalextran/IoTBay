@@ -11,6 +11,8 @@
 <%@page import="uts.isd.model.Order"%>
 <%@page import="uts.isd.model.Product"%>
 <%@page import="uts.isd.model.Customer"%>
+<%@page import="java.text.SimpleDateFormat"%> 
+<%@page import="java.util.Date"%>
 
 
 
@@ -33,7 +35,9 @@
       UP.Update(UP.getConnDB(), product.getid(), product.getname(), product.getprice(), product.getstock()-amount, product.gettype());
       InsertingOrders ATO = new InsertingOrders();
       Customer customer = (Customer)session.getAttribute("user"); 
-      ATO.Insert(ATO.getConnDB(), product.getname(), amount, product.getprice()*amount, customer.getId());
+      SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+       Date date = new Date();
+      ATO.Insert(ATO.getConnDB(), formatter.format(date), product.getname(), amount, product.getprice()*amount, customer.getId());
     
     %>
     
@@ -49,11 +53,11 @@ else{
   
 <h1>Insufficient stock!</h1>
 
-
+<a href="MyOrder.jsp" class="btn btn-primary">Go back</a>
 <%
 }
 %>
-        <a href="MyOrder.jsp" class="btn btn-primary">Go back</a>
+        
 
 </html>
 

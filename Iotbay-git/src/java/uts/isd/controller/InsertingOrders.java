@@ -21,8 +21,8 @@ public class InsertingOrders{
         return connDB;
     }
     
-    public static String Insert(Connection conn, String name, int amount, double price, int customerid) throws SQLException {
-    String sqlQuery = "INSERT INTO ALIZA.\"Order\" (NAME, AMOUNT ,PRICE, CUSTOMERID) VALUES ('"+name +"', "+amount+","+ price+ ", "+customerid+")";
+    public static String Insert(Connection conn, String date, String name, int amount, double price, int customerid) throws SQLException {
+    String sqlQuery = "INSERT INTO ALIZA.\"Order\" (DATE, NAME, AMOUNT ,PRICE, CUSTOMERID) VALUES ('"+date+"', '"+name +"', "+amount+","+ price+ ", "+customerid+")";
     
     try (Statement statement = conn.createStatement()) {
       statement.executeUpdate(sqlQuery);

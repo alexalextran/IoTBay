@@ -20,6 +20,15 @@ public class Order {
     public void setID(int ID) {
         this.ID = ID;
     }
+  private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
   private String name;
   private int amount;
   private double price;

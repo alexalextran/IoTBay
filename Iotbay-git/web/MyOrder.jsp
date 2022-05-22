@@ -76,6 +76,7 @@
                  <%
                      for(int i = 0; i < OrderList.size(); i++ ){
             int id = OrderList.get(i).getID();
+            String selectedDate = OrderList.get(i).getDate();
             String selectedName = OrderList.get(i).getName();
             int selectedAmount =  OrderList.get(i).getAmount();
             Double selectedPrice =  OrderList.get(i).getPrice();
@@ -83,7 +84,7 @@
            
              <tr>   
                 <td><%= id %></td>
-                <td>Date</td>
+                <td><%= selectedDate %></td>
                 <td><%= selectedName %></td>
                 <td><%= selectedAmount %></td>
                 <td><%= selectedPrice %></td>

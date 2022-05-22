@@ -108,6 +108,7 @@ CREATE TABLE "Order"
    "ID" INT not null primary key
         GENERATED ALWAYS AS IDENTITY
         (START WITH 1, INCREMENT BY 1),  
+   DATE VARCHAR(40), 
    "NAME" VARCHAR(80)  ,    
    "AMOUNT" NUMERIC(10)  ,
    "PRICE" DOUBLE ,

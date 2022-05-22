@@ -29,9 +29,17 @@ public class FetchOrders{
     public static  List <Order> getOrders(Connection conn, String params, int customerid) throws SQLException {
     String sqlQuery;
     if(params!=null){
-        int id = Integer.parseInt(params);
+        if(!params.contains("/")){
+            int id = Integer.parseInt(params);
+            sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+customerid+" and ID = " +id+"  " ; 
+        }
         
-        sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+customerid+" and ID = " +id+""; 
+        else{
+            sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+customerid+" and DATE = '"+params+"' " ; 
+
+        }
+        
+        
     }else{
         sqlQuery = "SELECT * FROM ALIZA.\"Order\" WHERE CUSTOMERID = "+customerid+"";
     }
@@ -46,6 +54,7 @@ public class FetchOrders{
           
         Order currentOrder = new Order();
         currentOrder.setID(res.getInt("ID"));
+        currentOrder.setDate(res.getString("DATE"));
         currentOrder.setName(res.getString("NAME"));
         currentOrder.setAmount(res.getInt("AMOUNT"));
         currentOrder.setPrice(res.getDouble("PRICE"));
